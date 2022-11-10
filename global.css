@@ -76,6 +76,11 @@ body {
   align-items: center;
   flex-wrap: wrap;
 }
+
+.header_contact a {
+  text-decoration: none;
+}
+
 .header_nav {
   justify-content: space-evenly;
   display: flex;
