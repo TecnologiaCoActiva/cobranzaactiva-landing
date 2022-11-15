@@ -98,7 +98,7 @@ body {
   font-weight: 600;
   padding: 10px;
   border-bottom: 3px solid transparent;
-  transition: all ease 0.4s;
+  transition: border-bottom ease 0.4s;
 }
 
 .header_nav ul {
@@ -113,7 +113,8 @@ body {
 }
 
 .header {
-  position: fixed;
+  position: sticky;
+  position: -webkit-sticky;
   top: 0;
   left: 0;
   width: 100%;
@@ -140,15 +141,32 @@ body {
 }
 
 .main {
-  margin-top: 160px;
+  position: relative;
+  flex: 1;
 }
 
-@media screen and (max-width: 728px) {
+.whatsapp {
+  background-color: #25d366;
+  border-radius: 50%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+}
+
+@media screen and (max-width: 768px) {
   .header_nav ul {
     position: absolute;
     flex-wrap: wrap;
     top: 99%;
     background: #fff;
+    height: 215px;
+    gap: 0;
+    width: 100%;
   }
   #menu:not(.show),
   #menu_info:not(.show) {
@@ -156,16 +174,16 @@ body {
   }
   .header_info {
     position: absolute;
-    top: calc(100% + 228px);
+    top: calc(100% + 213px);
   }
   .header_menu_btn {
     display: flex;
   }
+  .header {
+    height: 105px;
+  }
   .header_nav ul a,
   .header_nav ul li {
     width: 100%;
-  }
-  .main {
-    margin-top: 107px;
   }
 }
