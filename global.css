@@ -180,7 +180,10 @@ body {
     display: flex;
   }
   .header {
-    height: 105px;
+    height: 71px;
+  }
+  .header_nav {
+    padding: 0;
   }
   .header_nav ul a,
   .header_nav ul li {

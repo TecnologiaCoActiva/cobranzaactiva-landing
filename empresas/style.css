@@ -1,4 +1,4 @@
-.empresas-banner {
+.image-with-description {
   position: relative;
   display: flex;
   justify-content: center;
@@ -7,7 +7,7 @@
   align-items: center;
 }
 
-.empresas-banner > div {
+.image-with-description > div {
   display: flex;
   justify-content: center;
   padding: 0 2rem;
@@ -18,16 +18,16 @@
   height: 100%;
 }
 
-.empresas-banner > div:last-child {
+.image-with-description > div:last-child {
   padding: 0;
 }
 
-.empresas-banner h1 {
+.image-with-description h1 {
   color: #0066b1;
   font-size: 2rem;
 }
 
-.empresas-banner p {
+.image-with-description p {
   font-size: 1.2rem;
 }
 
@@ -39,14 +39,14 @@
   width: 100%;
 }
 
-.empresas-banner a {
+.image-with-description a {
   width: 100%;
   display: flex;
   justify-content: center;
   text-decoration: none;
 }
 
-.empresas-banner button {
+.image-with-description button {
   width: 100%;
   border: none;
   height: 50px;
@@ -65,26 +65,26 @@
   background-color: #7bb41e;
 }
 
-.empresas-content {
+.icons-boxes {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   max-width: 1300px;
   margin: 0 auto;
 }
 
-.empresas-content h2 {
+.icons-boxes h2 {
   font-size: 1.9rem;
 }
 
-.empresas-content h2 + p {
+.icons-boxes h2 + p {
   font-size: 1.2rem;
 }
 
-.empresas-content h3 {
+.icons-boxes h3 {
   text-align: center;
 }
 
-.empresas-content > div {
+.icons-boxes > div {
   padding: 1rem;
   height: 250px;
   display: flex;
@@ -94,32 +94,32 @@
   flex-direction: column;
 }
 
-.empresas-content svg {
+.icons-boxes svg {
   width: 70px;
   height: 70px;
   fill: #c8d5dc;
 }
 
-.empresas-content > div:first-child {
+.icons-boxes > div:first-child {
   background-color: #f3f5f8;
 }
 
 @media (max-width: 768px) {
-  .empresas-content {
+  .icons-boxes {
     grid-template-columns: repeat(1, 1fr);
     margin-top: 1rem;
   }
-  .empresas-banner {
+  .image-with-description {
     flex-direction: column;
   }
-  .empresas-content > div {
+  .icons-boxes > div {
     height: 180px;
   }
-  .empresas-banner > div:last-child {
+  .image-with-description > div:last-child {
     order: -1;
     margin-bottom: 1rem;
   }
-  .empresas-banner > div {
+  .image-with-description > div {
     position: relative;
     max-width: 100%;
     padding: 0 1rem;
