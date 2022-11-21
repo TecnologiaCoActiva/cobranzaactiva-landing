@@ -158,7 +158,80 @@ body {
   z-index: 100;
 }
 
+.header_overlay {
+  position: fixed;
+  top: 75px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.modal_background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.modal_link {
+  text-decoration: none;
+  display: flex;
+  width: 100%;
+  height: auto;
+}
+
+.modal_img {
+  width: 100%;
+  height: auto;
+}
+
+.modal_close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  display: flex;
+}
+
+.modal_content {
+  position: relative;
+  display: flex;
+  width: 100%;
+  max-width: 750px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.modal.is-active {
+  display: flex;
+}
+
 @media screen and (max-width: 768px) {
+  .modal {
+    display: none !important;
+  }
   .header_nav ul {
     position: absolute;
     flex-wrap: wrap;
@@ -167,7 +240,13 @@ body {
     height: 215px;
     gap: 0;
     width: 100%;
+    z-index: 2;
   }
+
+  .header_info.show + .header_overlay {
+    display: block;
+  }
+
   #menu:not(.show),
   #menu_info:not(.show) {
     display: none;
@@ -175,9 +254,19 @@ body {
   .header_info {
     position: absolute;
     top: calc(100% + 213px);
+    z-index: 1;
   }
   .header_menu_btn {
     display: flex;
+  }
+  .header_menu_btn svg:last-child {
+    display: none;
+  }
+  .header_info.show ~ .header_nav .header_menu_btn svg:last-child {
+    display: block;
+  }
+  .header_info.show ~ .header_nav .header_menu_btn svg:first-child {
+    display: none;
   }
   .header {
     height: 71px;

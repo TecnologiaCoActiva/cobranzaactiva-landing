@@ -80,8 +80,9 @@
 }
 
 .rewards_section p {
-  max-width: 500px;
+  max-width: 600px;
   margin: 0 auto;
+  font-size: 1.2rem;
 }
 
 .images-links img {
