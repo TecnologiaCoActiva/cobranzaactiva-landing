@@ -18,8 +18,30 @@ const closeModal = () => {
   modal.classList.remove("is-active");
 };
 
+const randomNumber = () => {
+  return parseInt(Math.random() * (999999 - 100000) + 100000);
+};
+
+const sendSecurityCode = async (message, phone) => {
+  return await fetch(
+    `https://masivos.colombiared.com.co/Api/get/send.php?text=${message}&to=${phone}&from=CA&username=cobranzaactiva&password=Activapp&coding=gsm`,
+    {
+      method: "GET",
+      headers: {
+        accept: "application/json",
+        cors: "no-cors",
+      },
+    }
+  );
+};
+
 if (window.innerWidth > 768) {
-  setTimeout(() => {
+  setTimeout(async () => {
     showModal();
   }, 2000);
 }
+
+// await sendSecurityCode(
+//   `Tu numero de seguridad es ${randomNumber()}`,
+//   "573128805228"
+// );
