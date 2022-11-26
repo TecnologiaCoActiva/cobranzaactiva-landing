@@ -97,7 +97,7 @@ body {
   color: #7a7a7a;
   font-weight: 600;
   padding: 10px;
-  border-bottom: 3px solid transparent;
+  border-bottom: 3px solid #fff;
   transition: border-bottom ease 0.4s;
 }
 
@@ -226,6 +226,29 @@ body {
 
 .modal.is-active {
   display: flex;
+}
+
+.login_btn {
+  text-decoration: none;
+}
+
+.login_btn button {
+  background: #fff;
+  border: none;
+  color: #0066b1;
+  font-weight: 700;
+  border-radius: 999px;
+  height: 30px;
+  padding: 5px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0 auto;
+}
+
+.login_btn img {
+  height: 100%;
 }
 
 @media screen and (max-width: 768px) {
