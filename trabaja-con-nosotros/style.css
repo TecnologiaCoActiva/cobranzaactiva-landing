@@ -62,7 +62,7 @@
 }
 
 .image-with-description h2 {
-  color: #0066b1;
+  color: #255cd0;
   font-size: 2rem;
 }
 
@@ -97,11 +97,11 @@
 }
 
 .buttons-group a:first-child button {
-  background-color: #0066b1;
+  background-color: #255cd0;
 }
 
 .buttons-group a:last-child button {
-  background-color: #7bb41e;
+  background-color: #4a8e39;
 }
 
 @media (max-width: 768px) {

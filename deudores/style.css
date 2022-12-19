@@ -59,12 +59,12 @@
 
 .buttons-group a:first-child button,
 .buttons-group button:first-child {
-  background-color: #0066b1;
+  background-color: #255cd0;
 }
 
 .buttons-group a:last-child button,
 .buttons-group a:last-child {
-  background-color: #7bb41e;
+  background-color: #4a8e39;
 }
 
 @media (max-width: 768px) {

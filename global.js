@@ -1,3 +1,5 @@
+gtag("config", "AW-11016912602");
+
 const menu = document.getElementById("menu");
 const menuInfo = document.getElementById("menu_info");
 const modal = document.querySelector(".modal");

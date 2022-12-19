@@ -69,7 +69,7 @@
 }
 
 .buttons-group a:first-child button {
-  background-color: #0066b1;
+  background-color: #255cd0;
 }
 
 .rewards_section {
@@ -132,7 +132,7 @@
 }
 
 .stats h2 {
-  color: #7bb41e;
+  color: #4a8e39;
   font-size: 3.5rem;
   line-height: 3.5rem;
   margin-bottom: 0.5rem;
@@ -194,7 +194,7 @@
 }
 
 .list-header {
-  background-color: #0066b1;
+  background-color: #255cd0;
   color: #fff;
   padding: 1rem;
   text-align: center;
@@ -246,7 +246,7 @@
   background-color: transparent;
   cursor: pointer;
   font-size: 1.1rem;
-  background-color: #0066b1;
+  background-color: #255cd0;
   color: #fff;
   width: 100%;
   border-radius: 999px;
