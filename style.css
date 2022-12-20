@@ -262,6 +262,16 @@
   color: #7a7a7a;
 }
 
+.banner-home {
+  margin-top: 2rem;
+}
+
+.image-mobile {
+  width: 100%;
+  max-width: 160px;
+  margin: 0 auto;
+}
+
 @media (max-width: 768px) {
   .image-with-description {
     flex-direction: column;
