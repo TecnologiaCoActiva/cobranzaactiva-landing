@@ -1,12 +1,12 @@
 gtag("config", "AW-11016912602");
 
 const menu = document.getElementById("menu");
-const menuInfo = document.getElementById("menu_info");
+const menuOverlay = document.querySelector(".header_overlay");
 const modal = document.querySelector(".modal");
 
 const handleMenu = () => {
   menu.classList.toggle("show");
-  menuInfo.classList.toggle("show");
+  menuOverlay.classList.toggle("show");
 };
 
 const showModal = () => {
