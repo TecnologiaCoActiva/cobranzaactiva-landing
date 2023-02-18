@@ -317,6 +317,11 @@
   gap: 5px;
   flex-direction: column;
   color: #505050;
+  transition: transform ease 0.4s;
+}
+
+.icons-boxes > div:hover {
+  transform: translateY(-10px);
 }
 
 .icons-boxes > div:nth-child(1) {
@@ -497,7 +502,40 @@
   width: auto !important;
 }
 
+.clients {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.clients h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1e6325;
+  margin-bottom: 2rem;
+}
+
+.clients img {
+  max-height: 150px;
+  max-width: 200px;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.clients .swiper-slide {
+  height: auto;
+}
+
+.clients p {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  padding: 0 1rem;
+}
+
 @media (max-width: 768px) {
+  .clients p {
+    font-size: 1rem;
+  }
   .titulo span {
     font-size: 40px;
   }
@@ -510,7 +548,8 @@
   .stats_section h2,
   .testimony h2,
   .how-work-section > h2,
-  .rewards_section h2 {
+  .rewards_section h2,
+  .clients h2 {
     font-size: 1.9rem;
   }
   .icons-boxes h3 {
