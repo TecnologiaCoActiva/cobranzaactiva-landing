@@ -6,6 +6,14 @@
   margin: 0 auto;
   align-items: center;
 }
+.banner-home {
+  background-image: url(/imagenes/1.\ Fondo\ de\ Color\ y\ Tramas\ 1.png);
+  background-position: bottom center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 2rem 0 5rem 0;
+  color: #fff;
+}
 
 .image-with-description > div {
   display: flex;
@@ -18,16 +26,76 @@
   height: 100%;
 }
 
-.image-with-description > div.container-img {
-  padding: 0;
-}
-
 .image-with-description h2 {
   font-size: 2rem;
+  text-align: center;
+  line-height: 125%;
+}
+
+.section-blue span {
+  font-size: 35px;
+}
+
+.container-img {
+  position: relative;
+}
+
+.banner-blue {
+  background-image: url(./imagenes/4.\ Fondo\ de\ Color\ Azul.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 2rem 0;
+}
+
+.banner-blue span {
+  font-size: 46px;
+}
+.banner-blue img {
+  position: relative;
+  max-width: 400px;
+  height: 400px;
+}
+.banner-blue .container-img::before {
+  content: "";
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background-color: #ffffff77;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 1rem;
+}
+
+.banner-blue button {
+  background-color: #6a3296 !important;
+}
+
+.banner-blue h2 {
+  font-size: 1.5rem;
+  line-height: 135%;
+  color: #352abe;
+  max-width: 385px;
+  text-align: left;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.banner-blue p {
+  color: #fff;
+}
+
+.titulo span {
+  font-size: 55px;
 }
 
 .image-with-description p {
   font-size: 1.2rem;
+  width: 100%;
+  max-width: 385px;
+  margin: 0 auto 5px;
+  font-weight: lighter;
 }
 
 .testimony p,
@@ -37,8 +105,12 @@
 }
 
 .testimony img {
-  width: 100px;
-  transform: scale(1.5);
+  max-width: 110px !important;
+  margin: 0 !important;
+}
+
+.testimony .buttons-group {
+  justify-content: flex-start;
 }
 
 .buttons-group {
@@ -59,17 +131,18 @@
 .image-with-description button {
   width: 100%;
   border: none;
-  height: 50px;
-  max-width: 400px;
-  border-radius: 999px;
+  padding: 10px 0;
+  max-width: 380px;
+  border-radius: 10px;
   cursor: pointer;
   font-size: 1rem;
-  font-weight: 600;
-  color: #fff;
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+  align-items: center;
 }
 
 .buttons-group a:first-child button {
-  background-color: #255cd0;
+  background-color: #1e6325;
 }
 
 .rewards_section {
@@ -79,16 +152,33 @@
 }
 
 .rewards_section h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #6a3296;
+  padding: 0 0 20px 0;
 }
 
 .rewards_section p {
   margin: 0 auto;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .partner_section p {
   max-width: 700px;
+}
+
+.rewards_section hr {
+  background-color: black;
+  border: none;
+  display: block;
+  height: 2px;
+  margin: 1.5rem auto;
+  max-width: 700px;
+}
+.tech_crecimiento img {
+  width: 100%;
+  max-width: 700px;
+  padding: 30px 0;
 }
 
 .images-links img {
@@ -106,36 +196,97 @@
 .images-links a {
   text-decoration: none;
   display: flex;
+  width: 100%;
+  max-width: 95px;
+  padding: 10px 0;
 }
 
 .images-links {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+}
+
+.bg-testimonio {
+  background-image: url("./imagenes/Fondo\ Testimonio.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+.testimony-section {
+  padding: 3rem 0;
+}
+.testimony-section img {
+  max-width: 500px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.testimony h2 {
+  color: #1e6325;
+  border-right: 2px solid #1e6325;
+  border-bottom: 2px solid #1e6325;
+  width: fit-content;
+  padding-right: 10px;
+  font-weight: 900;
+}
+
+.testimony > p {
+  background-color: #e7e7e7;
+  border-left: 7px solid #00d5fb;
+  font-weight: 500;
+  font-size: 15px;
+  padding: 1rem;
+  border-radius: 0 10px 10px 0;
+  margin: 1rem 0;
+  max-width: 450px;
+}
+
+.testimony b {
+  color: #1e6325;
 }
 
 .stats_section {
-  background-color: #f2f2f0;
   display: flex;
-  gap: 3rem;
+  gap: 2rem 3rem;
   justify-content: center;
   text-align: center;
   padding: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .stats {
-  border-radius: 10px;
+  border-radius: 15px;
+  border: 2px solid #00d5fb;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.7);
   width: 100%;
-  max-width: 400px;
-  padding: 1rem;
+  max-width: 340px;
+  padding: 0rem 1rem 1.5rem;
+  background-color: #f2f2f0;
 }
 
-.stats h2 {
-  color: #4a8e39;
-  font-size: 3.5rem;
+.stats span {
+  color: #4c4084;
+  font-size: 2.4rem;
   line-height: 3.5rem;
   margin-bottom: 0.5rem;
+  margin-right: 5px;
+}
+
+.stats h3 {
+  color: #1e6325;
+  font-size: 1.6rem;
+  line-height: 30%;
+}
+
+.stats_section h2 {
+  color: #1e6325;
+  font-size: 2.5rem;
+  font-weight: 800;
+  width: 100%;
 }
 
 .icons-boxes {
@@ -155,27 +306,45 @@
 
 .icons-boxes h3 {
   text-align: center;
+  font-size: 2rem;
+  font-weight: 800;
 }
 
 .icons-boxes > div {
   padding: 1rem;
-  height: 250px;
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 5px;
   flex-direction: column;
+  color: #505050;
 }
 
-.icons-boxes svg {
-  width: 70px;
-  height: 70px;
-  fill: #c8d5dc;
+.icons-boxes > div:nth-child(1) {
+  color: #1e6325;
+}
+
+.icons-boxes > div:nth-child(3) {
+  color: #6a3296;
+}
+
+.how-work-section {
+  padding: 2rem 0;
+  background-image: url("./imagenes/9.1Ícono\ Bolsa\ de\ Dinero.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.icons-boxes img {
+  width: 100%;
+  max-width: 200px;
 }
 
 .how-work-section > h2 {
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1e6325;
 }
 
 .list-section {
@@ -262,10 +431,6 @@
   color: #7a7a7a;
 }
 
-.banner-home {
-  margin-top: 2rem;
-}
-
 .image-mobile {
   width: 100%;
   max-width: 160px;
@@ -333,6 +498,24 @@
 }
 
 @media (max-width: 768px) {
+  .titulo span {
+    font-size: 40px;
+  }
+  .image-with-description button {
+    max-width: 100%;
+  }
+  .image-with-description h2 {
+    font-size: 1.5rem;
+  }
+  .stats_section h2,
+  .testimony h2,
+  .how-work-section > h2,
+  .rewards_section h2 {
+    font-size: 1.9rem;
+  }
+  .icons-boxes h3 {
+    font-size: 1.5rem;
+  }
   .image-with-description {
     flex-direction: column;
   }
@@ -390,8 +573,5 @@
   .icons-boxes {
     grid-template-columns: repeat(1, 1fr);
     margin-top: 1rem;
-  }
-  .icons-boxes > div {
-    height: 180px;
   }
 }

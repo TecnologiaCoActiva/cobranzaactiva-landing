@@ -77,6 +77,10 @@ img {
   height: auto;
 }
 
+button {
+  font-family: "Montserrat", sans-serif;
+}
+
 body {
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
@@ -232,6 +236,29 @@ body {
   margin: 0;
   border: none;
   background: none;
+  flex-direction: column;
+  width: 20px;
+  height: 30px;
+  gap: 4px;
+  justify-content: center;
+}
+.header_menu_btn > div {
+  background-color: #000;
+  height: 3px;
+  width: 100%;
+  border-radius: 5px;
+  transition: all 0.5s;
+  transform-origin: left;
+}
+
+ul.show ~ .header_menu_btn div:first-child {
+  transform: rotate(45deg);
+}
+ul.show ~ .header_menu_btn div:nth-child(2) {
+  opacity: 0;
+}
+ul.show ~ .header_menu_btn div:last-child {
+  transform: rotate(-45deg);
 }
 
 .main {
