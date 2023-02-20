@@ -77,7 +77,8 @@ img {
   height: auto;
 }
 
-button {
+button,
+input {
   font-family: "Montserrat", sans-serif;
 }
 
@@ -91,6 +92,24 @@ body {
   min-height: 100vh;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.notification {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  transition: top ease 0.4s;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1e6325;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #fff;
+  text-align: center;
+}
+
+.notification.active {
+  top: 110px;
 }
 
 .header_info {
@@ -481,6 +500,12 @@ ul.show ~ .header_menu_btn div:last-child {
 }
 
 @media screen and (max-width: 768px) {
+  .notification {
+    width: 95%;
+  }
+  .notification.active {
+    top: 90px;
+  }
   .is-hidden-mobile {
     display: none !important;
   }

@@ -57,6 +57,34 @@ if (stats.length > 0) {
   observer.observe(document.querySelector(".stats span"));
 }
 
+const notification = document.querySelector(".notification");
+const onSubmit = (event) => {
+  event.preventDefault();
+  const inputs = event.target.elements;
+  const name = inputs["name"].value;
+  const email = inputs["email"].value;
+  const phone = inputs["phone"].value;
+  const button = inputs[3];
+  button.disabled = true;
+  Email.send({
+    SecureToken: "38a0742a-eb24-48af-a8c6-955164429d02",
+    To: "alejandro.sanchez@cobranzaactiva.com",
+    From: "tecnologia@cobranzaactiva.com",
+    Subject: `${name.toUpperCase()} Esta interesado en que lo contactemos`,
+    Body: `<h2>Informacion de Contacto:</h2> 
+      <p style="margin: 0;font-size: 16px;"><b>Nombre:</b> ${name}</p>  
+      <p style="margin: 0;font-size: 16px;"><b>Correo:</b> ${email}</p> 
+      <p style="margin: 0;font-size: 16px;"><b>Celular:</b> ${phone}</p> `,
+  }).then(() => {
+    notification.innerHTML = `<b>${name.toUpperCase()}</b> Pronto estaremos en contacto contigo! 🚀`;
+    notification.classList.add("active");
+    setTimeout(() => {
+      notification.classList.remove("active");
+      notification.innerHTML = ``;
+    }, 3000);
+  });
+};
+
 if (document.querySelector(".swiper-container")) {
   const slider = () => {
     new Swiper(".swiper-container", {
