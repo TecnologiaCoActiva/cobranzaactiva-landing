@@ -67,7 +67,7 @@ const onSubmit = (event) => {
   const button = inputs[3];
   button.disabled = true;
   Email.send({
-    SecureToken: "38a0742a-eb24-48af-a8c6-955164429d02",
+    SecureToken: "3d312e1a-d130-4b34-bf54-d03f9b525716",
     To: "alejandro.sanchez@cobranzaactiva.com",
     From: "tecnologia@cobranzaactiva.com",
     Subject: `${name.toUpperCase()} Esta interesado en que lo contactemos`,
