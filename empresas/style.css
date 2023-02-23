@@ -103,7 +103,6 @@
 .icons-boxes {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
-  max-width: 1300px;
   margin: 0 auto;
   background-color: #00d5fb;
   padding: 2rem 0;
