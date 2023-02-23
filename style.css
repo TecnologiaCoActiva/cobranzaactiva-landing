@@ -3,6 +3,7 @@
   display: flex;
   justify-content: center;
   margin: 0 auto;
+  max-width: 1300px;
   align-items: center;
 }
 .banner-home {

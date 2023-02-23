@@ -100,15 +100,20 @@
   background-color: #6a3296;
 }
 
+.icons-boxes-blue {
+  background-color: #00d5fb;
+}
+
 .icons-boxes {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
   margin: 0 auto;
-  background-color: #00d5fb;
   padding: 2rem 0;
   position: relative;
+  max-width: 1300px;
   overflow: hidden;
 }
+
 .icons-boxes::before {
   content: "Empresas";
   position: absolute;
