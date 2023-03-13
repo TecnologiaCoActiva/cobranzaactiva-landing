@@ -118,11 +118,6 @@ if (document.querySelector(".swiper-container")) {
       mousewheel: {
         forceToAxis: true,
       },
-      pagination: {
-        el: ".swiper-container .swiper-pagination",
-        type: "bullets",
-        clickable: true,
-      },
       spaceBetween: 20,
       watchOverflow: true,
       centerInsufficientSlides: true,
