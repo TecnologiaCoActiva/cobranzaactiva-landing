@@ -147,7 +147,7 @@ body {
   justify-content: space-evenly;
   display: flex;
   align-items: center;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
 }
 
 .header_nav ul a {
@@ -553,7 +553,6 @@ ul.show ~ .header_menu_btn div:last-child {
     display: none;
   }
   .header_nav {
-    padding: 0.5rem 1rem;
     justify-content: space-between;
     background-color: #fff;
   }
