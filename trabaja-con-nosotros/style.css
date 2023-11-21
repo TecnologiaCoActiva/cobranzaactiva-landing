@@ -95,9 +95,9 @@
   font-style: italic;
 }
 
-.box-back > div.buttons-group {
+/* .box-back > div.buttons-group {
   margin-bottom: 3rem;
-}
+} */
 
 .box-back > div {
   position: relative;
@@ -121,7 +121,7 @@
   font-weight: 800 !important;
 }
 
-.box-back::before {
+/* .box-back::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -130,7 +130,7 @@
   width: 85%;
   height: 80%;
   border: 2px solid #91d258;
-}
+} */
 
 .text-description b {
   font-size: 30px;
@@ -196,7 +196,7 @@
   display: flex;
   justify-content: center;
   text-decoration: none;
-  max-width: 200px;
+  max-width: 350px;
 }
 
 .image-with-description button {

@@ -94,6 +94,14 @@ body {
   justify-content: space-between;
 }
 
+.justify {
+  text-align: justify;
+}
+
+.center {
+  text-align: center;
+}
+
 .notification {
   position: fixed;
   z-index: 10;

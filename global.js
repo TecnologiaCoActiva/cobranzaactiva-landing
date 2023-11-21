@@ -1,71 +1,71 @@
-gtag("config", "AW-11016912602")
+gtag("config", "AW-11016912602");
 
-const menu = document.getElementById("menu")
-const menuOverlay = document.querySelector(".header_overlay")
-const modal = document.querySelector(".modal")
+const menu = document.getElementById("menu");
+const menuOverlay = document.querySelector(".header_overlay");
+const modal = document.querySelector(".modal");
 
 const formatter = new Intl.NumberFormat("es-CO", {
   currency: "COP",
   maximumFractionDigits: 0,
-})
+});
 
 const handleMenu = () => {
-  menu.classList.toggle("show")
-  menuOverlay.classList.toggle("show")
-}
+  menu.classList.toggle("show");
+  menuOverlay.classList.toggle("show");
+};
 
 const showModal = () => {
   if (sessionStorage.getItem("modal") === null && modal) {
-    modal.classList.add("is-active")
-    sessionStorage.setItem("modal", "true")
+    modal.classList.add("is-active");
+    sessionStorage.setItem("modal", "true");
   }
-}
+};
 
 const closeModal = () => {
-  modal.classList.remove("is-active")
-}
+  modal.classList.remove("is-active");
+};
 
 if (window.innerWidth > 768) {
   setTimeout(async () => {
-    showModal()
-  }, 2000)
+    showModal();
+  }, 2000);
 }
 
-const stats = document.querySelectorAll(".stats span")
-let tresMil = 0
-let cuatroMil = 0
+// const stats = document.querySelectorAll(".stats span")
+// let tresMil = 0
+// let cuatroMil = 0
 
-if (stats.length > 0) {
-  const handler = (en) => {
-    if (en[0].isIntersecting) {
-      const counter = setInterval(() => {
-        if (tresMil != 3000) {
-          tresMil += 10
-          stats[0].innerText = `+ $${formatter.format(tresMil)}`
-        }
-        if (cuatroMil != 4000) {
-          cuatroMil += 10
-          stats[1].innerText = `+ ${formatter.format(cuatroMil)}`
-        } else {
-          clearInterval(counter)
-        }
-      }, 10)
-    }
-  }
+// if (stats.length > 0) {
+//   const handler = (en) => {
+//     if (en[0].isIntersecting) {
+//       const counter = setInterval(() => {
+//         if (tresMil != 3000) {
+//           tresMil += 10
+//           stats[0].innerText = `+ $${formatter.format(tresMil)}`
+//         }
+//         if (cuatroMil != 4000) {
+//           cuatroMil += 10
+//           stats[1].innerText = `+ ${formatter.format(cuatroMil)}`
+//         } else {
+//           clearInterval(counter)
+//         }
+//       }, 10)
+//     }
+//   }
 
-  const observer = new window.IntersectionObserver(handler)
-  observer.observe(document.querySelector(".stats span"))
-}
+//   const observer = new window.IntersectionObserver(handler)
+//   observer.observe(document.querySelector(".stats span"))
+// }
 
-const notification = document.querySelector(".notification")
+const notification = document.querySelector(".notification");
 const onSubmit = (event) => {
-  event.preventDefault()
-  const inputs = event.target.elements
-  const name = inputs["name"].value
-  const email = inputs["email"].value
-  const phone = inputs["phone"].value
-  const button = inputs[3]
-  button.disabled = true
+  event.preventDefault();
+  const inputs = event.target.elements;
+  const name = inputs["name"].value;
+  const email = inputs["email"].value;
+  const phone = inputs["phone"].value;
+  const button = inputs[3];
+  button.disabled = true;
   Email.send({
     SecureToken: "3d312e1a-d130-4b34-bf54-d03f9b525716",
     To: "alejandro.sanchez@cobranzaactiva.com",
@@ -76,14 +76,14 @@ const onSubmit = (event) => {
       <p style="margin: 0;font-size: 16px;"><b>Correo:</b> ${email}</p> 
       <p style="margin: 0;font-size: 16px;"><b>Celular:</b> ${phone}</p> `,
   }).then(() => {
-    notification.innerHTML = `<b>${name.toUpperCase()}</b> Pronto estaremos en contacto contigo! 🚀`
-    notification.classList.add("active")
+    notification.innerHTML = `<b>${name.toUpperCase()}</b> Pronto estaremos en contacto contigo! 🚀`;
+    notification.classList.add("active");
     setTimeout(() => {
-      notification.classList.remove("active")
-      notification.innerHTML = ``
-    }, 3000)
-  })
-}
+      notification.classList.remove("active");
+      notification.innerHTML = ``;
+    }, 3000);
+  });
+};
 
 if (document.querySelector(".swiper-container")) {
   const slider = () => {
@@ -122,8 +122,8 @@ if (document.querySelector(".swiper-container")) {
       watchOverflow: true,
       centerInsufficientSlides: true,
       centerSlides: true,
-    })
-  }
+    });
+  };
 
-  slider()
+  slider();
 }
