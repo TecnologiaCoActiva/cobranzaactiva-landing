@@ -155,7 +155,7 @@ body {
   justify-content: space-evenly;
   display: flex;
   align-items: center;
-  padding: 0.5rem 1rem;
+  padding: 1rem;
 }
 
 .header_nav ul a {
@@ -541,7 +541,7 @@ ul.show ~ .header_menu_btn div:last-child {
 
   #menu:not(.show),
   #menu_info:not(.show) {
-    top: -300%;
+    top: -380%;
   }
   .header_info {
     position: absolute;
