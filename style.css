@@ -733,4 +733,6 @@
     grid-template-columns: repeat(1, 1fr);
     margin-top: 1rem;
   }
-}
+    .deudor_btn {
+  background-color: #255cd0 !important;
+  }
