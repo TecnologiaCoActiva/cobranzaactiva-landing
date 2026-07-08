@@ -575,4 +575,8 @@ ul.show ~ .header_menu_btn div:last-child {
   .footer .siguenos {
     justify-content: center;
   }
+
+  .deudor_btn {
+  background-color: #255cd0 !important;
+}
 }
