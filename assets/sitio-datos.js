@@ -11,6 +11,8 @@
  *   data-ca-href="WHATSAPP_COMERCIAL" data-ca-tipo="whatsapp" → reemplaza el enlace
  *   data-ca-precio="SUSCRIPCION_RECUPERA_PLUS"         → precio en pesos
  *   data-ca-cifra="WEB_CIFRA_RECAUDOS"                 → número con separador de miles
+ *   data-ca-mostrar="URL_REGISTRO"                     → se muestra solo si la clave tiene valor
+ *   data-ca-registro                                   → el enlace lleva al registro si URL_REGISTRO tiene valor
  */
 (function () {
   var API = "https://app.cobranzaactiva.com/api/publico/sitio"
@@ -72,6 +74,19 @@
       var k = el.getAttribute("data-ca-cifra")
       if (tiene(k) && Number.isFinite(Number(todo[k]))) el.textContent = miles(todo[k])
     })
+    // Registro de entidades: cuando URL_REGISTRO tiene dirección, se muestra en el menú Clientes
+    // y los botones "Empezar" de los precios llevan al registro en vez del formulario de contacto
+    var registro = tiene("URL_REGISTRO") ? enlace(todo.URL_REGISTRO) : null
+    if (registro) {
+      document.querySelectorAll('[data-ca-mostrar="URL_REGISTRO"]').forEach(function (el) {
+        el.hidden = false
+      })
+      document.querySelectorAll("[data-ca-registro]").forEach(function (el) {
+        el.setAttribute("href", registro)
+        el.setAttribute("target", "_blank")
+        el.setAttribute("rel", "noopener")
+      })
+    }
     document.documentElement.setAttribute("data-ca-datos", datos.fuente || "plataforma")
   }
 

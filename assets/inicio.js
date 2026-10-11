@@ -122,6 +122,8 @@
   var selector = document.getElementById("f-producto")
   document.querySelectorAll("[data-producto]").forEach(function (a) {
     a.addEventListener("click", function () {
+      // Si el botón ya lleva al registro de la plataforma, no se toca el formulario
+      if ((a.getAttribute("href") || "").charAt(0) !== "#") return
       if (selector) selector.value = a.getAttribute("data-producto")
       setTimeout(function () {
         var nombre = document.getElementById("f-nombre")

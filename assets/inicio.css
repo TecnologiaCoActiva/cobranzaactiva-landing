@@ -95,6 +95,10 @@ ol {
   padding-right: var(--gutter);
 }
 
+[hidden] {
+  display: none !important;
+}
+
 .visualmente-oculto {
   position: absolute !important;
   width: 1px;
