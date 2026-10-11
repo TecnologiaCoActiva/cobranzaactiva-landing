@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /trabaja-con-nosotros/
+
+Sitemap: https://www.cobranzaactiva.com/sitemap.xml

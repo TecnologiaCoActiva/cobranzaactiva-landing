@@ -1,0 +1,8 @@
+{
+  "name": "cobranzaactiva-landing",
+  "private": true,
+  "description": "Página web de Cobranza Activa (sitio estático, sin paso de construcción)",
+  "engines": {
+    "node": "22.x"
+  }
+}
