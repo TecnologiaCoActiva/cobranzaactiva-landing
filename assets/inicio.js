@@ -67,6 +67,52 @@
     calcular()
   }
 
+  // Recorrido de la plataforma: pestañas accesibles
+  var pestanas = document.querySelectorAll('.tour__pestanas [role="tab"]')
+  if (pestanas.length) {
+    var menuApp = document.querySelectorAll(".app__menu li[data-pantalla]")
+    var activar = function (tab, enfocar, desplazar) {
+      pestanas.forEach(function (t) {
+        var sel = t === tab
+        t.setAttribute("aria-selected", sel ? "true" : "false")
+        t.tabIndex = sel ? 0 : -1
+        document.getElementById(t.getAttribute("aria-controls")).hidden = !sel
+      })
+      var clave = tab.id.replace("t-", "")
+      var app = document.querySelector(".app")
+      if (app) app.classList.toggle("app--deudor", clave === "deudor")
+      var url = document.querySelector(".navegador p")
+      if (url) url.textContent = clave === "deudor" ? "Portal de autogestión del deudor" : "app.cobranzaactiva.com"
+      menuApp.forEach(function (li) {
+        li.classList.toggle("activo", li.getAttribute("data-pantalla") === clave)
+      })
+      if (enfocar) tab.focus()
+      if (desplazar && window.matchMedia("(max-width: 1000px)").matches) {
+        var lista = tab.parentElement
+        lista.scrollTo({ left: tab.offsetLeft - (lista.clientWidth - tab.clientWidth) / 2, behavior: "smooth" })
+      }
+    }
+    pestanas.forEach(function (t, i) {
+      t.addEventListener("click", function () {
+        activar(t, false, true)
+      })
+      t.addEventListener("keydown", function (e) {
+        var sig = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key]
+        if (sig) {
+          e.preventDefault()
+          activar(pestanas[(i + sig + pestanas.length) % pestanas.length], true, true)
+        } else if (e.key === "Home") {
+          e.preventDefault()
+          activar(pestanas[0], true)
+        } else if (e.key === "End") {
+          e.preventDefault()
+          activar(pestanas[pestanas.length - 1], true)
+        }
+      })
+    })
+    activar(pestanas[0])
+  }
+
   // Agenda: cuenta como conversión
   document.querySelectorAll(".js-agenda").forEach(function (a) {
     a.addEventListener("click", registrarConversion)
