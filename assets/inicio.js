@@ -24,6 +24,49 @@
   var rastreo = document.querySelector(".rastreo")
   if (rastreo) rastreo.classList.add("rastreo--animar")
 
+  // Simulador de honorarios: misma regla que la plataforma (lib/honorarios.js)
+  var simulador = document.getElementById("form-simulador")
+  if (simulador) {
+    var IVA = 0.19
+    var tramos = [
+      { hasta: 60, tarifa: 0.1 },
+      { hasta: 120, tarifa: 0.12 },
+      { hasta: 360, tarifa: 0.15 },
+      { hasta: Infinity, tarifa: 0.2 },
+    ]
+    var sServicio = document.getElementById("s-servicio")
+    var sDias = document.getElementById("s-dias")
+    var sValor = document.getElementById("s-valor")
+    var campoDias = document.getElementById("s-campo-dias")
+    var pesos = function (n) {
+      return "$" + Math.round(n).toLocaleString("es-CO")
+    }
+    var calcular = function () {
+      var servicio = sServicio.value
+      var porDias = servicio === "pro" || servicio === "plus"
+      campoDias.hidden = !porDias
+      var dias = Math.max(0, parseInt(sDias.value, 10) || 0)
+      var t =
+        servicio === "rescate" ? 0.4 : servicio === "juridico" ? 0.2 : tramos.filter(function (x) { return dias <= x.hasta })[0].tarifa
+      var valor = Number(String(sValor.value).replace(/\D/g, "")) || 0
+      var abono = Math.round(valor / (1 + t * (1 + IVA)))
+      document.getElementById("r-tarifa").textContent = Math.round(t * 100) + "% + IVA"
+      document.getElementById("r-honorarios").textContent = pesos(valor - abono)
+      document.getElementById("r-recibe").textContent = pesos(abono)
+    }
+    sValor.addEventListener("input", function () {
+      var d = sValor.value.replace(/\D/g, "").slice(0, 12)
+      sValor.value = d ? Number(d).toLocaleString("es-CO") : ""
+      calcular()
+    })
+    sServicio.addEventListener("change", calcular)
+    sDias.addEventListener("input", calcular)
+    simulador.addEventListener("submit", function (e) {
+      e.preventDefault()
+    })
+    calcular()
+  }
+
   // Agenda: cuenta como conversión
   document.querySelectorAll(".js-agenda").forEach(function (a) {
     a.addEventListener("click", registrarConversion)

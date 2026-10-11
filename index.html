@@ -42,6 +42,71 @@
       }
     </script>
 
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Hay cláusula de permanencia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Puede retirar cuentas cuando quiera, salvo las que tengan un acuerdo de pago vigente, una orden de retención por nómina o un proceso judicial activo. Si una cuenta con alguno de esos trámites se retira, se pagan los honorarios proyectados sobre su saldo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuándo y cómo se factura?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mes vencido. Al cierre de cada mes se cobra la suscripción completa de cada crédito según el servicio en que esté, sin fraccionar por días. Los pagos se concilian en la plataforma hasta el día 5 del mes siguiente."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Quién paga los honorarios?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Se liquidan sobre lo que efectivamente paga el deudor y salen de ese pago. Si no hay recaudo, no hay honorarios."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué pasa si el deudor le paga directamente a la entidad?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Usted registra ese pago en la plataforma y se concilia como cualquier otro recaudo de la cartera asignada. Si retira una cuenta y el deudor paga antes de terminar el mes siguiente, ese pago también genera honorarios."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué necesito para empezar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Registrar su entidad, firmar el contrato de forma electrónica y cargar la cartera en la plataforma. Para retención por nómina, cada crédito necesita el pagaré y la autorización de descuento."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué pasa con deudores pensionados o que ganan un salario mínimo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En esos casos no procede la solicitud directa al pagador o al empleador. Le sugerimos el proceso judicial, que usted autoriza desde la plataforma."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Atienden entidades de todo el país?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Somos de Cali y operamos de forma digital, así que atendemos cooperativas, fondos de empleados y mutuales en toda Colombia."
+      }
+    }
+  ]
+}
+    </script>
+
     <!-- Google tag (gtag.js). La conversión se registra al enviar el formulario o abrir la agenda, no al cargar la página. -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11016912602"></script>
     <script>
@@ -397,6 +462,42 @@
             </ul>
           </div>
 
+          <!-- Simulador de honorarios -->
+          <div class="simulador" id="simulador">
+            <div class="simulador__intro">
+              <h3>Simule un pago</h3>
+              <p>Escriba lo que paga el deudor y vea cuánto recibe su entidad. Los honorarios y su IVA salen de ese pago, según los días de mora a la fecha en que paga.</p>
+            </div>
+            <form class="simulador__form" id="form-simulador" novalidate>
+              <div class="campo">
+                <label for="s-servicio">Servicio</label>
+                <select id="s-servicio">
+                  <option value="pro">Recaudo Pro</option>
+                  <option value="plus" selected>Recupera Plus+</option>
+                  <option value="juridico">Resuelve Jurídico</option>
+                  <option value="rescate">Rescate Master</option>
+                </select>
+              </div>
+              <div class="campo" id="s-campo-dias">
+                <label for="s-dias">Días de mora al pagar</label>
+                <input id="s-dias" type="number" inputmode="numeric" min="31" max="5000" value="94" />
+              </div>
+              <div class="campo">
+                <label for="s-valor">Pago del deudor</label>
+                <div class="campo-pesos">
+                  <span aria-hidden="true">$</span>
+                  <input id="s-valor" type="text" inputmode="numeric" value="500.000" autocomplete="off" />
+                </div>
+              </div>
+            </form>
+            <dl class="simulador__resultado" aria-live="polite">
+              <div><dt>Tarifa aplicada</dt><dd id="r-tarifa">12% + IVA</dd></div>
+              <div><dt>Honorarios con IVA</dt><dd id="r-honorarios">$62.478</dd></div>
+              <div class="simulador__recibe"><dt>Recibe su entidad</dt><dd id="r-recibe">$437.522</dd></div>
+            </dl>
+            <p class="simulador__nota">Cálculo de referencia. En la plataforma cada pago se liquida con la misma regla y queda en su conciliación.</p>
+          </div>
+
           <div class="precios__notas">
             <p><strong>¿Tiene 20 créditos vencidos o menos?</strong> Recaudo Pro por $60.000 al mes más IVA, con pago anticipado.</p>
             <p>Los servicios de cobranza dinámica (computación en la nube) están excluidos de IVA según el numeral 24 del artículo 187 de la Ley 1819 de 2016. Las tarifas de investigación incluyen IVA.</p>
@@ -431,6 +532,37 @@
         </div>
       </section>
 
+      <!-- Cobranza responsable -->
+      <section class="responsable" aria-labelledby="titulo-responsable">
+        <div class="envoltura responsable__grid">
+          <div>
+            <h2 id="titulo-responsable">Cobramos con respeto por el deudor</h2>
+            <p>
+              El deudor es asociado de su entidad. Por eso cada contacto sigue la Ley 2300 de 2023 y protege sus
+              datos personales. Así cuidamos la relación que usted construyó.
+            </p>
+          </div>
+          <ul class="responsable__lista">
+            <li>
+              <h3>Horarios permitidos</h3>
+              <p>Lunes a viernes de 7:00 a. m. a 7:00 p. m. y sábados de 8:00 a. m. a 3:00 p. m. Nunca domingos ni festivos.</p>
+            </li>
+            <li>
+              <h3>Contacto medido</h3>
+              <p>Respetamos los límites de frecuencia de la ley y no contactamos a las referencias personales del deudor.</p>
+            </li>
+            <li>
+              <h3>Datos protegidos</h3>
+              <p>Tratamos la información según la Ley 1581 de 2012 y la Ley 1266 de 2008 de habeas data.</p>
+            </li>
+            <li>
+              <h3>Todo queda registrado</h3>
+              <p>Cada mensaje, llamada y acuerdo queda en la plataforma, con fecha y responsable, para que usted lo audite.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
       <!-- Deudores -->
       <section class="deudores" aria-labelledby="titulo-deudores">
         <div class="envoltura deudores__grid">
@@ -441,6 +573,43 @@
           </div>
           <div class="deudores__acciones">
             <a class="boton boton--verde" data-ca-href="URL_PORTAL_DEUDOR" href="https://script.google.com/macros/s/AKfycbx95IJsMQ7XHxfeWjRLgsIew0fAcyoox11WLeVIrxPIx34a6T4elSpvQDE89Vd-g5UILg/exec" target="_blank" rel="noopener">Consultar mi deuda</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Preguntas frecuentes -->
+      <section id="preguntas" class="seccion preguntas" aria-labelledby="titulo-preguntas">
+        <div class="envoltura preguntas__grid">
+          <h2 id="titulo-preguntas">Preguntas frecuentes</h2>
+          <div class="preguntas__lista">
+            <details class="pregunta">
+              <summary>¿Hay cláusula de permanencia?</summary>
+              <p>No. Puede retirar cuentas cuando quiera, salvo las que tengan un acuerdo de pago vigente, una orden de retención por nómina o un proceso judicial activo. Si una cuenta con alguno de esos trámites se retira, se pagan los honorarios proyectados sobre su saldo.</p>
+            </details>
+            <details class="pregunta">
+              <summary>¿Cuándo y cómo se factura?</summary>
+              <p>Mes vencido. Al cierre de cada mes se cobra la suscripción completa de cada crédito según el servicio en que esté, sin fraccionar por días. Los pagos se concilian en la plataforma hasta el día 5 del mes siguiente.</p>
+            </details>
+            <details class="pregunta">
+              <summary>¿Quién paga los honorarios?</summary>
+              <p>Se liquidan sobre lo que efectivamente paga el deudor y salen de ese pago. Si no hay recaudo, no hay honorarios.</p>
+            </details>
+            <details class="pregunta">
+              <summary>¿Qué pasa si el deudor le paga directamente a la entidad?</summary>
+              <p>Usted registra ese pago en la plataforma y se concilia como cualquier otro recaudo de la cartera asignada. Si retira una cuenta y el deudor paga antes de terminar el mes siguiente, ese pago también genera honorarios.</p>
+            </details>
+            <details class="pregunta">
+              <summary>¿Qué necesito para empezar?</summary>
+              <p>Registrar su entidad, firmar el contrato de forma electrónica y cargar la cartera en la plataforma. Para retención por nómina, cada crédito necesita el pagaré y la autorización de descuento.</p>
+            </details>
+            <details class="pregunta">
+              <summary>¿Qué pasa con deudores pensionados o que ganan un salario mínimo?</summary>
+              <p>En esos casos no procede la solicitud directa al pagador o al empleador. Le sugerimos el proceso judicial, que usted autoriza desde la plataforma.</p>
+            </details>
+            <details class="pregunta">
+              <summary>¿Atienden entidades de todo el país?</summary>
+              <p>Sí. Somos de Cali y operamos de forma digital, así que atendemos cooperativas, fondos de empleados y mutuales en toda Colombia.</p>
+            </details>
           </div>
         </div>
       </section>
@@ -545,6 +714,7 @@
         <div>
           <h2>Información</h2>
           <ul>
+            <li><a href="/#preguntas">Preguntas frecuentes</a></li>
             <li><a href="/documents/Cobranza%20Activa_Informe%20BIC%202025.pdf" target="_blank" rel="noopener">Informe BIC 2025</a></li>
             <li><a data-ca-href="URL_PAGOS_PSE" href="https://portalpagos.davivienda.com/#/comercio/7132/COBRANZA%20ACTIVA%20SAS" target="_blank" rel="noopener">Pago de facturas (clientes)</a></li>
             <li><a href="https://docs.google.com/document/d/1drH7IzBOHxf9505DIOFEqLwyQt9Wmsi8" target="_blank" rel="noopener">Política de tratamiento de datos</a></li>
