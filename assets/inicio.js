@@ -190,9 +190,12 @@
         registrarConversion()
       })
       .catch(function (err) {
-        var msj = err && err.message && err.message !== "error" && err.message !== "Failed to fetch"
-          ? err.message
-          : "No pudimos enviar su solicitud. Escríbanos por WhatsApp o agende una cita."
+        // Los errores de red del navegador ("Load failed", "Failed to fetch"...) llegan como TypeError
+        // o con mensajes en inglés: al usuario siempre se le muestra un mensaje claro en español
+        var red = !err || err.name === "TypeError" || err.name === "SyntaxError" || err.message === "error"
+        var msj = red
+          ? "No pudimos enviar su solicitud. Escríbanos por WhatsApp o agende una cita."
+          : err.message
         mostrar(msj, "error")
       })
       .then(function () {
