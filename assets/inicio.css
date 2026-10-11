@@ -183,55 +183,50 @@ ol {
   border-bottom: 1px solid var(--linea);
 }
 .cabecera__barra {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas: "logo nav acciones";
   align-items: center;
-  gap: 24px;
+  column-gap: 28px;
   min-height: 72px;
+}
+.cabecera__logo {
+  grid-area: logo;
 }
 .cabecera__logo img {
   width: 184px;
   height: auto;
 }
-.cabecera__menu {
-  display: none;
-  margin-left: auto;
-  background: none;
-  border: 0;
-  color: var(--verde);
-  padding: 8px;
-  cursor: pointer;
-}
 .cabecera__nav {
-  display: flex;
-  align-items: center;
-  flex: 1;
-  gap: 24px;
+  grid-area: nav;
+  min-width: 0;
 }
 .cabecera__nav ul {
   list-style: none;
   display: flex;
-  gap: 20px;
-  margin-left: auto;
+  justify-content: flex-end;
+  gap: 24px;
 }
-.cabecera__nav ul a {
+.cabecera__nav a {
+  display: block;
+  padding: 8px 0;
   color: var(--tinta);
   text-decoration: none;
   white-space: nowrap;
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   font-weight: 600;
+  border-bottom: 2px solid transparent;
 }
-.cabecera__nav ul a:hover {
+.cabecera__nav a:hover,
+.cabecera__nav a[aria-current="page"] {
   color: var(--verde);
+  border-bottom-color: var(--lima);
 }
 .cabecera__acciones {
+  grid-area: acciones;
   display: flex;
   align-items: center;
   gap: 16px;
-}
-.cabecera__acciones .boton {
-  min-height: 42px;
-  padding: 8px 18px;
-  font-size: 0.875rem;
 }
 .enlace-deudor {
   white-space: nowrap;
@@ -240,49 +235,118 @@ ol {
   font-size: 0.9rem;
   text-decoration: none;
 }
-.enlace-deudor:hover {
+.enlace-deudor:hover,
+.enlace-deudor[aria-current="page"] {
   text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
-@media (max-width: 1100px) {
-  .cabecera__menu {
-    display: block;
+/* Menú de clientes: plataforma y pago de facturas */
+.menu-clientes {
+  position: relative;
+}
+.menu-clientes summary {
+  list-style: none;
+  min-height: 42px;
+  padding: 8px 16px 8px 18px;
+  font-size: 0.875rem;
+  gap: 8px;
+}
+.menu-clientes summary::-webkit-details-marker {
+  display: none;
+}
+.menu-clientes summary::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform 0.15s;
+}
+.menu-clientes[open] summary {
+  background: var(--verde);
+  color: var(--blanco);
+}
+.menu-clientes[open] summary::after {
+  transform: translateY(2px) rotate(-135deg);
+}
+.menu-clientes__panel {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 10px);
+  width: 290px;
+  max-width: calc(100vw - 32px);
+  background: var(--blanco);
+  border: 1px solid var(--linea);
+  border-radius: var(--radio);
+  box-shadow: 0 20px 40px -20px rgba(8, 40, 12, 0.35);
+  padding: 6px;
+  display: grid;
+  z-index: 60;
+}
+.menu-clientes__panel a {
+  display: block;
+  padding: 12px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--tinta);
+}
+.menu-clientes__panel a:hover {
+  background: var(--papel);
+}
+.menu-clientes__panel b {
+  display: block;
+  font-size: 0.92rem;
+}
+.menu-clientes__panel small {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--gris);
+}
+
+/* En pantallas medianas y celular el menú baja a una segunda línea blanca, siempre visible */
+@media (max-width: 1000px) {
+  .cabecera__barra {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "logo acciones"
+      "nav nav";
+    min-height: 0;
+    padding-top: 12px;
   }
   .cabecera__nav {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 8px;
-    padding: 12px var(--gutter) 24px;
-    background: var(--blanco);
-    border-bottom: 1px solid var(--linea);
-    box-shadow: 0 16px 24px -16px rgba(0, 0, 0, 0.2);
+    margin: 8px calc(var(--gutter) * -1) 0;
+    padding: 0 var(--gutter);
+    border-top: 1px solid var(--linea);
+    overflow-x: auto;
+    scrollbar-width: none;
   }
-  .cabecera--abierta .cabecera__nav {
-    display: flex;
+  .cabecera__nav::-webkit-scrollbar {
+    display: none;
   }
   .cabecera__nav ul {
-    flex-direction: column;
-    gap: 0;
-    margin: 0;
+    justify-content: flex-start;
+    gap: 22px;
   }
-  .cabecera__nav ul a {
-    display: block;
-    padding: 12px 0;
-    font-size: 1rem;
-    border-bottom: 1px solid var(--linea);
+  .cabecera__nav a {
+    padding: 10px 0 8px;
+    font-size: 0.875rem;
+  }
+}
+@media (max-width: 420px) {
+  .cabecera__logo img {
+    width: 150px;
   }
   .cabecera__acciones {
-    flex-direction: column;
-    align-items: stretch;
-    padding-top: 8px;
+    gap: 12px;
   }
   .enlace-deudor {
-    padding: 8px 0;
+    font-size: 0.85rem;
+  }
+  .menu-clientes summary {
+    padding: 6px 12px 6px 14px;
+    min-height: 38px;
   }
 }
 

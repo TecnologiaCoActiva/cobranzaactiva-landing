@@ -6,23 +6,17 @@
     if (typeof window.gtag === "function") window.gtag("event", "conversion", { send_to: CONVERSION })
   }
 
-  // Menú en celular
-  var cabecera = document.querySelector(".cabecera")
-  var botonMenu = document.querySelector(".cabecera__menu")
-  if (cabecera && botonMenu) {
-    var cerrar = function () {
-      cabecera.classList.remove("cabecera--abierta")
-      botonMenu.setAttribute("aria-expanded", "false")
-    }
-    botonMenu.addEventListener("click", function () {
-      var abierto = cabecera.classList.toggle("cabecera--abierta")
-      botonMenu.setAttribute("aria-expanded", abierto ? "true" : "false")
-    })
-    document.querySelectorAll(".cabecera__nav a").forEach(function (a) {
-      a.addEventListener("click", cerrar)
+  // Menú de clientes: se cierra al hacer clic fuera o con Escape
+  var clientes = document.querySelector(".menu-clientes")
+  if (clientes) {
+    document.addEventListener("click", function (e) {
+      if (clientes.open && !clientes.contains(e.target)) clientes.open = false
     })
     document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") cerrar()
+      if (e.key === "Escape" && clientes.open) {
+        clientes.open = false
+        clientes.querySelector("summary").focus()
+      }
     })
   }
 

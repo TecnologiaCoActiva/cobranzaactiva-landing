@@ -61,23 +61,24 @@
         <a class="cabecera__logo" href="/" aria-label="Cobranza Activa, inicio">
           <img src="/assets/img/logo-cobranza-activa.webp" alt="Cobranza Activa" width="220" height="15" />
         </a>
-        <button class="cabecera__menu" type="button" aria-expanded="false" aria-controls="navegacion">
-          <span class="visualmente-oculto">Abrir menú</span>
-          <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-        </button>
-        <nav id="navegacion" class="cabecera__nav" aria-label="Principal">
+        <nav class="cabecera__nav" aria-label="Principal">
           <ul>
             <li><a href="#como-funciona">Cómo funciona</a></li>
             <li><a href="#precios">Precios</a></li>
-            <li><a href="/empresas/">Empresas</a></li>
+            <li><a href="/empresas/">Plataforma</a></li>
             <li><a href="/nosotros/">Nosotros</a></li>
-            <li><a href="/trabaja-con-nosotros/">Trabaje con nosotros</a></li>
           </ul>
-          <div class="cabecera__acciones">
-            <a class="enlace-deudor" data-ca-href="URL_PORTAL_DEUDOR" href="https://script.google.com/macros/s/AKfycbx95IJsMQ7XHxfeWjRLgsIew0fAcyoox11WLeVIrxPIx34a6T4elSpvQDE89Vd-g5UILg/exec" target="_blank" rel="noopener">Soy deudor</a>
-            <a class="boton boton--contorno" data-ca-href="URL_PLATAFORMA" href="https://app.cobranzaactiva.com/" target="_blank" rel="noopener">Ingresar</a>
-          </div>
         </nav>
+        <div class="cabecera__acciones">
+          <a class="enlace-deudor" href="/deudores/">Soy deudor</a>
+          <details class="menu-clientes">
+            <summary class="boton boton--contorno">Clientes</summary>
+            <div class="menu-clientes__panel">
+              <a data-ca-href="URL_PLATAFORMA" href="https://app.cobranzaactiva.com/" target="_blank" rel="noopener"><b>Ingresar a la plataforma</b><small>Cartera, pagos, informes y soporte</small></a>
+              <a data-ca-href="URL_PAGOS_PSE" href="https://portalpagos.davivienda.com/#/comercio/7132/COBRANZA%20ACTIVA%20SAS" target="_blank" rel="noopener"><b>Pagar factura por PSE</b><small>Facturas de Cobranza Activa</small></a>
+            </div>
+          </details>
+        </div>
       </div>
     </header>
 
@@ -211,7 +212,7 @@
             </li>
             <li>
               <h3>Notificamos al deudor</h3>
-              <p>Por SMS, WhatsApp y correo, con un enlace a su portal, donde consulta la deuda, hace un acuerdo y paga por PSE.</p>
+              <p>Por SMS, WhatsApp y correo, con un enlace a su portal, donde consulta la deuda, hace un acuerdo y ve cómo pagarle a su entidad.</p>
             </li>
             <li>
               <h3>Investigamos</h3>
@@ -252,7 +253,7 @@
               <ul class="lista-check">
                 <li>Consulta su saldo y su historial desde el celular</li>
                 <li>Propone un acuerdo de pago dentro del mes</li>
-                <li>Paga por PSE y reporta su comprobante</li>
+                <li>Ve los medios de pago de su entidad y reporta su comprobante</li>
                 <li>Actualiza sus datos de contacto y laborales</li>
               </ul>
             </div>
@@ -436,11 +437,10 @@
           <img src="/assets/img/agente-soporte.webp" alt="" width="200" height="217" loading="lazy" />
           <div>
             <h2 id="titulo-deudores">¿Recibió un mensaje de Cobranza Activa?</h2>
-            <p>Consulte su deuda, haga un acuerdo de pago o pague en línea. Solo necesita su número de cédula.</p>
+            <p>Consulte su deuda, haga un acuerdo de pago y reporte sus pagos. Solo necesita su número de cédula.</p>
           </div>
           <div class="deudores__acciones">
             <a class="boton boton--verde" data-ca-href="URL_PORTAL_DEUDOR" href="https://script.google.com/macros/s/AKfycbx95IJsMQ7XHxfeWjRLgsIew0fAcyoox11WLeVIrxPIx34a6T4elSpvQDE89Vd-g5UILg/exec" target="_blank" rel="noopener">Consultar mi deuda</a>
-            <a class="boton boton--contorno" data-ca-href="URL_PAGOS_PSE" href="https://portalpagos.davivienda.com/#/comercio/7132/COBRANZA%20ACTIVA%20SAS" target="_blank" rel="noopener">Pagar por PSE</a>
           </div>
         </div>
       </section>
@@ -546,7 +546,7 @@
           <h2>Información</h2>
           <ul>
             <li><a href="/documents/Cobranza%20Activa_Informe%20BIC%202025.pdf" target="_blank" rel="noopener">Informe BIC 2025</a></li>
-            <li><a data-ca-href="URL_PAGOS_PSE" href="https://portalpagos.davivienda.com/#/comercio/7132/COBRANZA%20ACTIVA%20SAS" target="_blank" rel="noopener">Pagos PSE</a></li>
+            <li><a data-ca-href="URL_PAGOS_PSE" href="https://portalpagos.davivienda.com/#/comercio/7132/COBRANZA%20ACTIVA%20SAS" target="_blank" rel="noopener">Pago de facturas (clientes)</a></li>
             <li><a href="https://docs.google.com/document/d/1drH7IzBOHxf9505DIOFEqLwyQt9Wmsi8" target="_blank" rel="noopener">Política de tratamiento de datos</a></li>
           </ul>
         </div>
