@@ -44,19 +44,6 @@
       gtag("js", new Date())
       gtag("config", "AW-11016912602")
     </script>
-
-    <!-- Event snippet for Suscribirse conversion page -->
-    <script>
-      gtag("event", "conversion", {
-        send_to: "AW-11016912602/gXl7CMavjYQYENr9ooUp",
-      })
-    </script>
-
-    <script
-      async
-      custom-element="amp-analytics"
-      src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"
-    ></script>
   </head>
   <body>
     <header class="header">
@@ -86,7 +73,7 @@
 
           <a
             target="_blank"
-            href="https://portalpagos.davivienda.com/#/comercio/7132/COBRANZA%20ACTIVA%20SAS"
+            data-ca-href="URL_PAGOS_PSE" href="https://portalpagos.davivienda.com/#/comercio/7132/COBRANZA%20ACTIVA%20SAS"
           >
             <li>Pagos PSE</li>
           </a>
@@ -94,7 +81,7 @@
           <a
             class="login_btn"
             target="_blank"
-            href="https://app.cobranzaactiva.com/"
+            data-ca-href="URL_PLATAFORMA" href="https://app.cobranzaactiva.com/"
           >
             <li>Iniciar Sesión</li>
           </a>
@@ -206,7 +193,7 @@
         </div>
       </div>
 
-      <a href="https://wa.me/+573225686832" target="_blank">
+      <a data-ca-href="WHATSAPP_COMERCIAL" data-ca-tipo="whatsapp" href="https://wa.me/573225686832" target="_blank">
         <div class="whatsapp">
           <svg
             fill="#ffffff"
@@ -227,15 +214,15 @@
         <h3 class="footer-list_tittle">Contacto</h3>
         <ul class="footer-list">
           <li class="footer-list_item">
-            <a target="_blank" href="https://wa.me/+573225686832">
+            <a target="_blank" data-ca-href="WHATSAPP_COMERCIAL" data-ca-tipo="whatsapp" href="https://wa.me/573225686832">
               <img src="../iconos/Celular.png" alt="celular" />
-              <p>+57 333 033 3181</p>
+              <p data-ca-texto="PBX" data-ca-formato="telefono">+57 333 033 3181</p>
             </a>
           </li>
           <li class="footer-list_item">
-            <a href="mailto:info@cobranzaactiva.com">
+            <a data-ca-href="CORREO_INFO" data-ca-tipo="mailto" href="mailto:info@cobranzaactiva.com">
               <img src="../iconos/Mensaje.png" alt="mensaje" />
-              <p>info@cobranzaactiva.com</p>
+              <p data-ca-texto="CORREO_INFO">info@cobranzaactiva.com</p>
             </a>
           </li>
           <li class="footer-list_item">
@@ -268,7 +255,7 @@
           <li class="footer-list_item">
             <a
               target="_blank"
-              href="https://portalpagos.davivienda.com/#/comercio/7132/COBRANZA%20ACTIVA%20SAS"
+              data-ca-href="URL_PAGOS_PSE" href="https://portalpagos.davivienda.com/#/comercio/7132/COBRANZA%20ACTIVA%20SAS"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -344,26 +331,8 @@
       </div>
     </footer>
     <!-- Google tag (gtag.js) -->
-    <amp-analytics type="gtag" data-credentials="include">
-      <script type="application/json">
-        {
-          "vars": {
-            "gtag_id": "AW-11016912602",
-            "config": { "AW-11016912602": { "groups": "default" } }
-          },
-          "triggers": {
-            "C_hnm2Vmhbl1c": {
-              "on": "visible",
-              "vars": {
-                "event_name": "conversion",
-                "send_to": ["AW-11016912602/gXl7CMavjYQYENr9ooUp"]
-              }
-            }
-          }
-        }
-      </script>
-    </amp-analytics>
 
     <script src="../global.js"></script>
+    <script src="/assets/sitio-datos.js" defer></script>
   </body>
 </html>
