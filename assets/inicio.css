@@ -2715,3 +2715,128 @@ ol {
     transform: rotate(135deg);
   }
 }
+
+/* ---------- Deudores: pantallas del portal ---------- */
+
+.pasos-portal__lista {
+  list-style: none;
+  counter-reset: paso;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(20px, 4vw, 48px);
+}
+.pasos-portal__lista li {
+  counter-increment: paso;
+  display: grid;
+  align-content: start;
+  gap: 10px;
+}
+.pasos-portal__lista .celular-mock {
+  background: var(--papel);
+  border-radius: 20px;
+  padding: 24px 12px;
+  margin-bottom: 8px;
+}
+.pasos-portal__lista .celular-mock__pantalla {
+  min-height: 380px;
+  align-content: start;
+  color: #565656;
+  font-size: 0.82rem;
+}
+.pasos-portal__lista h3 {
+  font-size: 1.1rem;
+  font-weight: 750;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.pasos-portal__lista h3::before {
+  content: counter(paso);
+  flex: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--verde);
+  background: var(--lima-suave);
+  border: 2px solid var(--lima);
+}
+.pasos-portal__lista li > p {
+  color: var(--gris);
+  font-size: 0.93rem;
+}
+.cm-campo {
+  text-align: left;
+  border: 1px solid #dfe5dc;
+  border-radius: 10px;
+  padding: 6px 10px;
+}
+.cm-campo small {
+  display: block;
+  font-size: 0.62rem;
+  color: #8a8a8a;
+}
+.cm-campo span {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #2f2f2f;
+}
+.cm-nota {
+  font-size: 0.62rem;
+  color: #8a8a8a;
+}
+.cm-filas {
+  display: grid;
+  gap: 4px;
+  text-align: left;
+  margin-bottom: 4px;
+}
+.cm-filas p {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  padding: 4px 2px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.cm-filas b {
+  color: #2f2f2f;
+}
+.cm-opciones {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+.cm-opcion {
+  text-align: left;
+  border: 1.5px solid #dfe5dc;
+  border-radius: 12px;
+  padding: 8px 10px;
+  font-size: 0.7rem;
+}
+.cm-opcion b {
+  display: block;
+  font-size: 0.8rem;
+  color: #2f2f2f;
+}
+.cm-opcion--activa {
+  border-color: var(--verde);
+  background: var(--lima-suave);
+}
+.pasos-portal__cta {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+}
+.seccion--papel {
+  background: var(--papel);
+}
+@media (max-width: 860px) {
+  .pasos-portal__lista {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+}
