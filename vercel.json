@@ -1,0 +1,13 @@
+{
+  "git": { "deploymentEnabled": { "*": false, "main": true } },
+  "cleanUrls": true,
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "cobranzaactiva.com" }],
+      "destination": "https://www.cobranzaactiva.com/:path*",
+      "permanent": true
+    }
+  ]
+}
