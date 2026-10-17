@@ -4,14 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Plataforma | Cobranza Activa</title>
-    <meta name="description" content="Conozca la plataforma de Cobranza Activa: asigne cartera, autorice gestiones, concilie pagos y descargue su informe mensual desde una sola pantalla." />
-    <link rel="canonical" href="https://www.cobranzaactiva.com/empresas/" />
+    <meta name="description" content="Recorra la plataforma de Cobranza Activa: asignación de cartera, autorizaciones, conciliación de pagos, informe mensual, facturación y chat con soporte." />
+    <link rel="canonical" href="https://www.cobranzaactiva.com/plataforma/" />
+    <meta name="google-site-verification" content="gHmLlVejRyXh8NsYjq5zb4KDBps2835G-YzwBNqP_DI" />
     <meta name="theme-color" content="#0F3A14" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_CO" />
+    <meta property="og:site_name" content="Cobranza Activa" />
     <meta property="og:title" content="Plataforma | Cobranza Activa" />
-    <meta property="og:description" content="Conozca la plataforma de Cobranza Activa: asigne cartera, autorice gestiones, concilie pagos y descargue su informe mensual desde una sola pantalla." />
-    <meta property="og:url" content="https://www.cobranzaactiva.com/empresas/" />
+    <meta property="og:description" content="Recorra la plataforma de Cobranza Activa: asignación de cartera, autorizaciones, conciliación de pagos, informe mensual, facturación y chat con soporte." />
+    <meta property="og:url" content="https://www.cobranzaactiva.com/plataforma/" />
     <meta property="og:image" content="https://www.cobranzaactiva.com/assets/img/compartir.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -20,8 +22,9 @@
     <link rel="preload" href="/assets/fuentes/montserrat-var.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preconnect" href="https://app.cobranzaactiva.com" crossorigin />
     <link rel="stylesheet" href="/assets/inicio.css" />
+    <link rel="stylesheet" href="/assets/sitio.css" />
 
-    <!-- Google tag (gtag.js). La conversión se registra al enviar el formulario o abrir la agenda, no al cargar la página. -->
+    <!-- Google tag (gtag.js). La conversión se registra al enviar un formulario o ir al registro, no al cargar la página. -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11016912602"></script>
     <script>
       window.dataLayer = window.dataLayer || []
@@ -34,58 +37,95 @@
   </head>
   <body>
     <a class="saltar" href="#contenido">Saltar al contenido</a>
-
-    <header class="cabecera">
-      <div class="cabecera__barra envoltura">
-        <a class="cabecera__logo" href="/" aria-label="Cobranza Activa, inicio">
+    <div class="anuncio">
+      <div class="envoltura anuncio__fila">
+        <p class="anuncio__texto">
+          <span class="anuncio__sello">Nuevo</span>
+          <span>Cree la cuenta de su entidad en 2 minutos y agende su reunión virtual con un asesor.</span>
+          <a class="js-agenda" data-ca-href="URL_REGISTRO" href="https://app.cobranzaactiva.com/registro" target="_blank" rel="noopener">Registrarme</a>
+        </p>
+        <nav class="anuncio__publico" aria-label="Tipo de visitante">
+          <a href="/" aria-current="true">Entidades</a>
+          <a href="/deudores/">Deudores</a>
+        </nav>
+      </div>
+    </div>
+    <header class="cab">
+      <div class="envoltura cab__barra">
+        <a class="cab__logo" href="/" aria-label="Cobranza Activa, inicio">
           <img src="/assets/img/logo-cobranza-activa.webp" alt="Cobranza Activa" width="220" height="15" />
         </a>
-        <nav class="cabecera__nav" aria-label="Principal">
+        <nav class="cab__nav" aria-label="Principal">
           <ul>
-            <li><a href="/#como-funciona">Cómo funciona</a></li>
-            <li><a href="/#precios">Precios</a></li>
-            <li><a href="/empresas/" aria-current="page">Plataforma</a></li>
+            <li><button class="cab__soluciones" type="button" aria-expanded="false" aria-controls="mega">Soluciones</button></li>
+            <li><a href="/precios/">Precios</a></li>
+            <li><a href="/plataforma/" aria-current="page">Plataforma</a></li>
             <li><a href="/nosotros/">Nosotros</a></li>
+            <li><a href="/contacto/">Contacto</a></li>
           </ul>
         </nav>
-        <div class="cabecera__acciones">
-          <a class="enlace-deudor" href="/deudores/">Soy deudor</a>
-          <details class="menu-clientes">
-            <summary class="boton boton--contorno">Clientes</summary>
-            <div class="menu-clientes__panel">
-              <a class="js-agenda" data-ca-href="URL_REGISTRO" href="https://app.cobranzaactiva.com/registro" target="_blank" rel="noopener"><b>Registrar mi entidad</b><small>Cree su cuenta y agende su reunión</small></a>
-              <a data-ca-href="URL_PLATAFORMA" href="https://app.cobranzaactiva.com/" target="_blank" rel="noopener"><b>Ingresar a la plataforma</b><small>Cartera, pagos, informes y soporte</small></a>
-              <a data-ca-href="URL_PAGOS_PSE" href="https://portalpagos.davivienda.com/#/comercio/7132/COBRANZA%20ACTIVA%20SAS" target="_blank" rel="noopener"><b>Pagar factura por PSE</b><small>Facturas de Cobranza Activa</small></a>
+        <div class="cab__acciones">
+          <a class="cab__ingresar" data-ca-href="URL_PLATAFORMA" href="https://app.cobranzaactiva.com/" target="_blank" rel="noopener">Ingresar</a>
+          <a class="boton boton--lima cab__cta js-agenda" data-ca-href="URL_REGISTRO" href="https://app.cobranzaactiva.com/registro" target="_blank" rel="noopener"><span class="largo">Regístrese y agende su cita</span><span class="corto">Registrarme</span></a>
+        </div>
+      </div>
+      <div class="mega" id="mega" hidden>
+        <div class="envoltura mega__grid">
+          <div>
+            <p class="mega__titulo">Por tipo de cartera</p>
+            <ul class="mega__tipos">
+              <li><a href="/servicios/recaudo-pro/"><b>Mora temprana</b><span>Desde 31 días: mensajes, portal y acuerdos</span></a></li>
+              <li><a href="/servicios/recupera-plus/"><b>Deudor con empleo</b><span>Retención salarial sin demanda</span></a></li>
+              <li><a href="/servicios/resuelve-juridico/"><b>Con garantías o bienes</b><span>Proceso ejecutivo con medidas cautelares</span></a></li>
+              <li><a href="/servicios/rescate-master/"><b>Cartera castigada</b><span>Sin suscripción, solo paga si recuperamos</span></a></li>
+              <li><a href="/servicios/respaldo-insolvencia/"><b>Deudor en insolvencia</b><span>Representación en audiencias</span></a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="mega__titulo">Por servicio</p>
+            <ul class="mega__servicios">
+                <li><a href="/servicios/recaudo-pro/"><span class="punto punto--recaudo"></span><span><b>Recaudo Pro</b><small>Mensajes y acuerdos</small></span></a></li>
+                <li><a href="/servicios/recupera-plus/"><span class="punto punto--plus"></span><span><b>Recupera Plus+</b><small>Retención de nómina</small></span></a></li>
+                <li><a href="/servicios/resuelve-juridico/"><span class="punto punto--juridico"></span><span><b>Resuelve Jurídico</b><small>Proceso ejecutivo</small></span></a></li>
+                <li><a href="/servicios/rescate-master/"><span class="punto punto--rescate"></span><span><b>Rescate Master</b><small>Cartera castigada</small></span></a></li>
+                <li><a href="/servicios/respaldo-insolvencia/"><span class="punto punto--insolvencia"></span><span><b>Respaldo Insolvencia</b><small>Audiencias de insolvencia</small></span></a></li>
+                <li><a href="/precios/#investigacion"><span class="punto punto--investigacion"></span><span><b>Investigación</b><small>Empleador y bienes</small></span></a></li>
+            </ul>
+          </div>
+          <div class="mega__destacado">
+            <p>Lo nuevo de Cobranza Activa</p>
+            <b>Su entidad se autogestiona en la plataforma</b>
+            <div class="mini-chat" aria-hidden="true">
+              <span>¿Cuánto recaudamos en septiembre?</span>
+              <span><strong>$86,4 M</strong>, 18% más que en agosto. Informe listo en PDF.</span>
             </div>
-          </details>
+            <a href="/plataforma/">Conocer la plataforma</a>
+          </div>
         </div>
       </div>
     </header>
 
     <main id="contenido">
-      <section class="pl-portada">
-        <div class="envoltura pl-portada__grid">
-          <div>
-            <p class="portada__sector">Plataforma para entidades</p>
-            <h1>Toda su cartera en mora, en una sola pantalla.</h1>
+      <section class="portadilla portadilla--oscura">
+        <div class="envoltura portadilla__grid">
+          <div class="portadilla__titulo">
+            <span class="antetitulo">Plataforma para cooperativas y fondos de empleados</span>
+            <h1>Toda su cartera en mora, en una sola pantalla</h1>
           </div>
-          <div class="pl-portada__lado">
-            <p class="nos-portada__texto">
-              Desde el día en que firma, su entidad asigna cartera, autoriza gestiones, concilia pagos y descarga
-              informes sin enviar un solo correo. Recorra las pantallas y vea lo que va a encontrar.
-            </p>
-            <div class="portada__acciones">
-              <a class="boton boton--lima js-agenda" data-ca-href="URL_REGISTRO" href="https://app.cobranzaactiva.com/registro" target="_blank" rel="noopener">Regístrese y agende su cita</a>
-              <a class="boton boton--fantasma" data-ca-href="URL_PLATAFORMA" href="https://app.cobranzaactiva.com/" target="_blank" rel="noopener">Ingresar</a>
-            </div>
+          <div class="portadilla__lado">
+            <p>Asigne cartera, autorice gestiones, concilie pagos y descargue su informe sin enviar un solo correo.</p>
+            <ul class="datos-rapidos">
+              <li><b>0</b>instalaciones: funciona en el navegador</li>
+              <li><b>24/7</b>pagos y gestiones al día</li>
+              <li><b>8</b>pantallas que puede recorrer abajo</li>
+            </ul>
           </div>
         </div>
       </section>
 
-      <!-- Recorrido interactivo por las pantallas -->
       <section class="seccion recorrido-app" aria-labelledby="titulo-recorrido">
         <div class="envoltura">
-          <header class="seccion__cabeza">
+          <header class="s__cabeza">
             <h2 id="titulo-recorrido">Recorra la plataforma</h2>
             <p>Elija una pantalla. Los datos son de ejemplo; en su cuenta verá los de su entidad.</p>
           </header>
@@ -106,6 +146,9 @@
               </button>
               <button role="tab" id="t-informe" aria-controls="p-informe" aria-selected="false" tabindex="-1">
                 <b>Informe mensual</b><span>Dos páginas en PDF, listo el día 5</span>
+              </button>
+              <button role="tab" id="t-facturacion" aria-controls="p-facturacion" aria-selected="false" tabindex="-1">
+                <b>Facturación</b><span>Facturas, anexos de deudores y pago por PSE</span>
               </button>
               <button role="tab" id="t-soporte" aria-controls="p-soporte" aria-selected="false" tabindex="-1">
                 <b>Soporte</b><span>Chat y solicitudes sin salir de la plataforma</span>
@@ -131,7 +174,7 @@
                     <li data-pantalla="conciliacion">Conciliación de pagos</li>
                     <li>Saldos por actualizar</li>
                     <li data-pantalla="informe">Informes y descargas</li>
-                    <li>Facturación</li>
+                    <li data-pantalla="facturacion">Facturación</li>
                     <li>Simulador honorarios</li>
                   </ul>
                 </aside>
@@ -258,6 +301,26 @@
                     </div>
                   </div>
 
+                  <!-- Facturación -->
+                  <div class="panel" role="tabpanel" id="p-facturacion" aria-labelledby="t-facturacion" hidden>
+                    <div class="app__titulo"><h3>Facturación</h3><span class="chip">Al día</span></div>
+                    <div class="kpis">
+                      <div><small>Suscripción de octubre</small><b>$1,9 M</b><em>412 obligaciones</em></div>
+                      <div><small>Honorarios</small><b>$8,2 M</b><em>por recaudo efectivo</em></div>
+                      <div><small>Investigación</small><b>$310 mil</b><em>14 consultas</em></div>
+                      <div><small>Por pagar</small><b>$0</b><em class="sube">Sin saldo vencido</em></div>
+                    </div>
+                    <table class="tabla">
+                      <thead><tr><th>Factura</th><th>Concepto</th><th>Estado</th><th>Anexo</th></tr></thead>
+                      <tbody>
+                        <tr><td>FE2214</td><td>Honorarios septiembre</td><td>Pagada</td><td><span class="btn-mini btn-mini--borde">Excel</span></td></tr>
+                        <tr><td>FE2213</td><td>Suscripción septiembre</td><td>Pagada</td><td><span class="btn-mini btn-mini--borde">Excel</span></td></tr>
+                        <tr><td>FE2198</td><td>Investigación agosto</td><td>Pagada</td><td><span class="btn-mini btn-mini--borde">Excel</span></td></tr>
+                      </tbody>
+                    </table>
+                    <p class="app__pie">Busque por factura y descargue la relación de deudores de cada una. Pague por PSE desde aquí.</p>
+                  </div>
+
                   <!-- Soporte -->
                   <div class="panel" role="tabpanel" id="p-soporte" aria-labelledby="t-soporte" hidden>
                     <div class="app__titulo"><h3>Solicitudes</h3><span class="chip">2 abiertas</span></div>
@@ -298,10 +361,9 @@
         </div>
       </section>
 
-      <!-- Un mes con Cobranza Activa -->
-      <section class="seccion mes" aria-labelledby="titulo-mes">
+      <section class="seccion mes s--papel" aria-labelledby="titulo-mes">
         <div class="envoltura">
-          <header class="seccion__cabeza">
+          <header class="s__cabeza">
             <h2 id="titulo-mes">Un mes con Cobranza Activa</h2>
             <p>Así se ve el ciclo de cada mes, de la asignación a la factura.</p>
           </header>
@@ -309,18 +371,17 @@
             <li><span class="mes__dia">Día 1</span><h3>Asigne y actualice</h3><p>Carga los créditos nuevos y los saldos al corte. Lo que ya no está en mora se retira sin borrar su historial.</p></li>
             <li><span class="mes__dia">Días 2 a 5</span><h3>Notificamos</h3><p>Cada deudor recibe SMS, WhatsApp y correo con el enlace a su portal, dentro de los horarios de ley.</p></li>
             <li><span class="mes__dia">Semanas 2 y 3</span><h3>Investigamos y gestionamos</h3><p>Usted autoriza investigaciones; enviamos solicitudes de retención y seguimos los acuerdos.</p></li>
-            <li><span class="mes__dia">Todo el mes</span><h3>Pagos en tiempo real</h3><p>Cada pago y acuerdo aparece en la plataforma y usted lo va conciliando.</p></li>
+            <li><span class="mes__dia">Todo el mes</span><h3>Pagos en tiempo real</h3><p>Usted los recibe y va conciliando cada pago y acuerdo en la plataforma.</p></li>
             <li><span class="mes__dia">Día 5 siguiente</span><h3>Cierre e informe</h3><p>Se cierra la conciliación, queda listo su informe mensual y se factura mes vencido.</p></li>
           </ol>
         </div>
       </section>
 
-      <!-- Control -->
       <section class="seccion control" aria-labelledby="titulo-control">
         <div class="envoltura nos-pilares">
           <h2 id="titulo-control">Control y seguridad</h2>
           <ul>
-            <li><h3>Todo queda en la bitácora</h3><p>Cada cambio registra quién lo hizo, cuándo y por qué. Nadie edita su cartera a mano.</p></li>
+            <li><h3>Todo queda en la plataforma</h3><p>Cada cambio registra quién lo hizo, cuándo y por qué. Nadie edita su cartera a mano.</p></li>
             <li><h3>Usuarios de su entidad</h3><p>Cada persona entra con su usuario y ve solo la información de su entidad.</p></li>
             <li><h3>Descargas cuando quiera</h3><p>Cartera y pagos en Excel, informes en PDF, o enviados al correo que elija.</p></li>
             <li><h3>En la nube</h3><p>Disponible las 24 horas desde computador o celular, sin instalar nada.</p></li>
@@ -328,57 +389,102 @@
         </div>
       </section>
 
-      <section class="nos-cierre">
-        <div class="envoltura nos-cierre__grid">
-          <h2>Véala con su propia cartera</h2>
-          <div class="portada__acciones">
-            <a class="boton boton--lima js-agenda" data-ca-href="URL_REGISTRO" href="https://app.cobranzaactiva.com/registro" target="_blank" rel="noopener">Regístrese y agende su cita</a>
-            <a class="boton boton--fantasma" href="/#precios">Ver precios</a>
+      <section class="s">
+        <div class="envoltura">
+          <div class="banda">
+            <div class="banda__texto">
+              <h2>Véala con su propia cartera</h2>
+              <p>Regístrese, agende su reunión y empiece a trabajar en la plataforma con los datos de su entidad.</p>
+            </div>
+            <div class="banda__accion">
+              <a class="boton boton--lima js-agenda" data-ca-href="URL_REGISTRO" href="https://app.cobranzaactiva.com/registro" target="_blank" rel="noopener">Regístrese y agende su cita</a>
+            <small>Sin cláusula de permanencia. Facturación mes vencido.</small>
+            </div>
           </div>
         </div>
       </section>
+
     </main>
 
-
-<footer class="pie">
-      <div class="envoltura pie__grid">
-        <div class="pie__marca">
-          <img src="/assets/img/logo-cobranza-activa.webp" alt="Cobranza Activa" width="200" height="13" loading="lazy" />
-          <p>Cobranza Activa S.A.S. BIC. Recuperación de cartera con base tecnológica para el sector solidario en Colombia.</p>
+    <footer class="pie">
+      <div class="envoltura">
+        <div class="pie__grid">
+          <div class="pie__marca">
+            <img src="/assets/img/logo-cobranza-activa.webp" alt="Cobranza Activa" width="200" height="13" loading="lazy" />
+            <p>Empresa caleña, Sociedad BIC. Recuperación de cartera con base tecnológica para cooperativas y fondos de empleados.</p>
+            <div class="pie__sellos"><span>Sociedad BIC</span><span>Ley 2300 de 2023</span></div>
+          </div>
+          <div>
+            <h2>Servicios</h2>
+            <ul>
+            <li><a href="/servicios/recaudo-pro/">Recaudo Pro</a></li>
+            <li><a href="/servicios/recupera-plus/">Recupera Plus+</a></li>
+            <li><a href="/servicios/resuelve-juridico/">Resuelve Jurídico</a></li>
+            <li><a href="/servicios/rescate-master/">Rescate Master</a></li>
+            <li><a href="/servicios/respaldo-insolvencia/">Respaldo Insolvencia</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Enlaces útiles</h2>
+            <ul>
+              <li><a href="/precios/">Precios y simulador</a></li>
+              <li><a href="/plataforma/">Plataforma</a></li>
+              <li><a href="/preguntas-frecuentes/">Preguntas frecuentes</a></li>
+              <li><a href="/deudores/">Soy deudor</a></li>
+              <li><a data-ca-href="URL_PAGOS_PSE" href="https://portalpagos.davivienda.com/#/comercio/7132/COBRANZA%20ACTIVA%20SAS" target="_blank" rel="noopener">Pago de facturas (clientes)</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Contacto</h2>
+            <ul>
+              <li><a data-ca-href="PBX" data-ca-tipo="tel" href="tel:+573330333181"><span data-ca-texto="PBX" data-ca-formato="telefono">+57 333 033 3181</span></a></li>
+              <li><a data-ca-href="CORREO_INFO" data-ca-tipo="mailto" href="mailto:info@cobranzaactiva.com"><span data-ca-texto="CORREO_INFO">info@cobranzaactiva.com</span></a></li>
+              <li><span data-ca-texto="CIUDAD">Cali</span>, Colombia</li>
+              <li><a href="/nosotros/">Nosotros</a></li>
+            </ul>
+            <ul class="pie__redes" aria-label="Redes sociales">
+              <li><a data-ca-href="LINKEDIN_URL" href="https://www.linkedin.com/company/cobranzaactiva/about/" target="_blank" rel="noopener">LinkedIn</a></li>
+              <li><a data-ca-href="FACEBOOK_URL" href="https://www.facebook.com/cobranzaactiva" target="_blank" rel="noopener">Facebook</a></li>
+              <li><a data-ca-href="INSTAGRAM_URL" href="https://www.instagram.com/cobranza_activa/" target="_blank" rel="noopener">Instagram</a></li>
+            </ul>
+          </div>
         </div>
-        <div>
-          <h2>Contacto</h2>
-          <ul>
-            <li><a data-ca-href="PBX" data-ca-tipo="tel" href="tel:+573330333181"><span data-ca-texto="PBX" data-ca-formato="telefono">+57 333 033 3181</span></a></li>
-            <li><a data-ca-href="CORREO_INFO" data-ca-tipo="mailto" href="mailto:info@cobranzaactiva.com"><span data-ca-texto="CORREO_INFO">info@cobranzaactiva.com</span></a></li>
-            <li><span data-ca-texto="CIUDAD">Cali</span>, Colombia</li>
-          </ul>
-        </div>
-        <div>
-          <h2>Información</h2>
-          <ul>
-            <li><a href="/#preguntas">Preguntas frecuentes</a></li>
-            <li><a href="/documents/Cobranza%20Activa_Informe%20BIC%202025.pdf" target="_blank" rel="noopener">Informe BIC 2025</a></li>
-            <li><a data-ca-href="URL_PAGOS_PSE" href="https://portalpagos.davivienda.com/#/comercio/7132/COBRANZA%20ACTIVA%20SAS" target="_blank" rel="noopener">Pago de facturas (clientes)</a></li>
-            <li><a href="https://docs.google.com/document/d/1drH7IzBOHxf9505DIOFEqLwyQt9Wmsi8" target="_blank" rel="noopener">Política de tratamiento de datos</a></li>
-          </ul>
-        </div>
-        <div>
-          <h2>Síganos</h2>
-          <ul class="pie__redes">
-            <li><a data-ca-href="LINKEDIN_URL" href="https://www.linkedin.com/company/cobranzaactiva/about/" target="_blank" rel="noopener">LinkedIn</a></li>
-            <li><a data-ca-href="FACEBOOK_URL" href="https://www.facebook.com/cobranzaactiva" target="_blank" rel="noopener">Facebook</a></li>
-            <li><a data-ca-href="INSTAGRAM_URL" href="https://www.instagram.com/cobranza_activa/" target="_blank" rel="noopener">Instagram</a></li>
-          </ul>
+        <div class="pie__base">
+          <span>© 2026 Cobranza Activa S.A.S. BIC</span>
+          <span><a href="https://docs.google.com/document/d/1drH7IzBOHxf9505DIOFEqLwyQt9Wmsi8" target="_blank" rel="noopener">Política de tratamiento de datos</a> · <a href="/documents/Cobranza%20Activa_Informe%20BIC%202025.pdf" target="_blank" rel="noopener">Informe BIC 2025</a></span>
         </div>
       </div>
     </footer>
 
-    <a class="whatsapp-flotante" data-ca-href="WHATSAPP_COMERCIAL" data-ca-tipo="whatsapp" href="https://wa.me/573225686832" target="_blank" rel="noopener" aria-label="Escríbanos por WhatsApp">
-      <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6a10.6 10.6 0 0 1-5.4-1.5l-.4-.2-3.9 1 1-3.8-.2-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.6 3.6 0 0 0-1.1 2.7 6.3 6.3 0 0 0 1.3 3.3 14.4 14.4 0 0 0 5.5 4.9c2 .9 2.8.9 3.8.8a3.3 3.3 0 0 0 2.1-1.5 2.7 2.7 0 0 0 .2-1.5c-.1-.2-.3-.3-.6-.4z"/></svg>
-    </a>
+    <!-- Chat de la página: las conversaciones llegan a la mesa de soporte -->
+    <div class="asistente" id="asistente">
+      <section class="asistente__panel" role="dialog" aria-label="Chat con Cobranza Activa" hidden>
+        <header class="asistente__cabeza">
+          <span class="asistente__avatar" aria-hidden="true">CA</span>
+          <div class="asistente__quien">
+            <b>Mesa de soporte</b>
+            <span class="asistente__estado"><i></i><span>En horario de atención</span></span>
+          </div>
+          <button class="asistente__reiniciar" type="button">Reiniciar</button>
+          <button class="asistente__cerrar" type="button" aria-label="Cerrar el chat">×</button>
+        </header>
+        <div class="asistente__mensajes" aria-live="polite"></div>
+        <footer class="asistente__pie">
+          <form class="asistente__escribir">
+            <label class="visualmente-oculto" for="chat-texto">Escriba su mensaje</label>
+            <input id="chat-texto" type="text" placeholder="Escriba su mensaje" autocomplete="off" maxlength="500" />
+            <button type="submit" aria-label="Enviar mensaje"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          </form>
+          <p class="asistente__horario"><span>Atendemos de lunes a viernes, 8:00 a. m. a 5:30 p. m.</span> · <a data-ca-href="WHATSAPP_COMERCIAL" data-ca-tipo="whatsapp" href="https://wa.me/573225686832" target="_blank" rel="noopener">Prefiero WhatsApp</a></p>
+        </footer>
+      </section>
+      <button class="asistente__boton" type="button" aria-expanded="false" aria-controls="asistente">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>
+        <span>¿En qué le ayudamos?</span>
+      </button>
+    </div>
 
     <script src="/assets/sitio-datos.js" defer></script>
-    <script src="/assets/inicio.js" defer></script>
+    <script src="/assets/sitio.js" defer></script>
   </body>
 </html>
