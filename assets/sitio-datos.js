@@ -5,6 +5,7 @@
  * "Canales"). Esta página los toma de ahí al cargar.
  *
  * Si la plataforma no responde, se quedan los valores escritos en el HTML.
+ * El chat de la página toma de aquí el horario de atención (CHAT_HORARIO de la mesa de soporte).
  *
  * Uso en el HTML:
  *   data-ca-texto="PBX" data-ca-formato="telefono"   → reemplaza el texto
@@ -88,6 +89,11 @@
       })
     }
     document.documentElement.setAttribute("data-ca-datos", datos.fuente || "plataforma")
+    // Para el chat de la página (horario de atención, enlaces del portal y de la plataforma)
+    window.CA_DATOS = datos
+    try {
+      document.dispatchEvent(new CustomEvent("ca:datos"))
+    } catch (e) {}
   }
 
   var cargar = function () {

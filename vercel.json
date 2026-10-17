@@ -1,12 +1,33 @@
 {
-  "git": { "deploymentEnabled": { "*": false, "main": true } },
+  "git": {
+    "deploymentEnabled": {
+      "*": false,
+      "main": true,
+      "web/rediseno-alegra": true
+    }
+  },
   "cleanUrls": true,
   "trailingSlash": true,
   "redirects": [
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "cobranzaactiva.com" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "cobranzaactiva.com"
+        }
+      ],
       "destination": "https://www.cobranzaactiva.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/empresas",
+      "destination": "/plataforma/",
+      "permanent": true
+    },
+    {
+      "source": "/empresas/",
+      "destination": "/plataforma/",
       "permanent": true
     }
   ]
