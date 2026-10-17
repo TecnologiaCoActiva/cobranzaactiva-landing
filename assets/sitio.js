@@ -400,7 +400,7 @@
     deudor: function () {
       return [
         { t: "Ir a mi portal", accion: "portal" },
-        { t: "Escribir a soporte", ir: "formDeudor", dice: "Escriba su cédula, su celular y su mensaje. Llega a la mesa de soporte." },
+        { t: "Escribir a soporte", ir: "formDeudor", dice: "Con gusto. Déjenos su cédula, su nombre y, si la recuerda, su cooperativa o fondo de empleados. Su mensaje llega a la mesa de soporte." },
       ]
     },
     cliente: function () {
@@ -460,6 +460,8 @@
     f.noValidate = true
     if (tipo === "deudor") {
       f.appendChild(campo("ch-cedula", "Número de cédula", "text", { inputmode: "numeric", autocomplete: "off" }))
+      f.appendChild(campo("ch-nombre", "Nombre completo", "text", { autocomplete: "name" }))
+      f.appendChild(campo("ch-entidad", "¿Recuerda su cooperativa o fondo de empleados? (opcional)", "text", { autocomplete: "off", placeholder: "Ej. Fondo de empleados de su empresa" }))
       f.appendChild(campo("ch-celular", "Celular", "tel", { autocomplete: "tel", inputmode: "tel" }))
       f.appendChild(campo("ch-correo", "Correo (opcional)", "email", { autocomplete: "email" }))
     } else {
@@ -498,9 +500,12 @@
       var d = { canal: "chat", tipo: tipo, mensaje: v("ch-mensaje"), sitio_web: "" }
       if (tipo === "deudor") {
         d.cedula = v("ch-cedula")
+        d.nombre = v("ch-nombre")
+        d.entidad = v("ch-entidad")
         d.celular = v("ch-celular")
         d.correo = v("ch-correo")
         marcar("ch-cedula", d.cedula.replace(/\D/g, "").length < 5, "Revise el número de cédula.")
+        marcar("ch-nombre", d.nombre.length < 3, "Escriba su nombre completo.")
         marcar("ch-celular", d.celular.replace(/\D/g, "").length < 7, "Revise el número de celular.")
         marcar("ch-correo", d.correo !== "" && !correoValido(d.correo), "Revise el correo.")
       } else {
@@ -509,6 +514,7 @@
         d.correo = v("ch-correo")
         d.celular = v("ch-celular")
         d.producto = "Chat de la página"
+        d.perfil = estadoChat.perfil === "cliente" ? "cliente" : "entidad"
         marcar("ch-nombre", d.nombre.length < 3, "Escriba su nombre.")
         marcar("ch-correo", !correoValido(d.correo), "Revise el correo.")
         marcar("ch-celular", d.celular.replace(/\D/g, "").length < 7, "Revise el número de celular.")
@@ -584,6 +590,8 @@
         b.addEventListener("click", function () {
           if (o.accion === "reiniciar") return reiniciar()
           if (o.accion) return avanzar(paso, [yo(o.t), bot(ACCIONES[o.accion]())])
+          // Quién escribe: la etiqueta con la que llega a la Mesa de soporte
+          if (paso === "inicio") estadoChat.perfil = o.ir
           var respuesta = bot(o.dice)
           if (o.enlace) respuesta.enlace = o.enlace
           avanzar(o.ir, [yo(o.t), respuesta])
@@ -604,7 +612,7 @@
     if (primero && (paso === "formEntidad" || paso === "formDeudor")) primero.focus()
   }
   var reiniciar = function () {
-    estadoChat = { paso: "inicio", historial: [], abierto: true, pendiente: "" }
+    estadoChat = { paso: "inicio", historial: [], abierto: true, pendiente: "", perfil: "" }
     persistir()
     pintar()
   }
@@ -658,7 +666,7 @@
       return
     }
     estadoChat.pendiente = (estadoChat.pendiente ? estadoChat.pendiente + "\n" : "") + texto
-    if (paso === "deudor") return avanzar("formDeudor", [yo(texto), bot("Para que la mesa de soporte le responda, déjenos su cédula y su celular.")])
+    if (paso === "deudor") return avanzar("formDeudor", [yo(texto), bot("Para que la mesa de soporte le responda, déjenos su cédula, su nombre y, si la recuerda, su cooperativa o fondo de empleados.")])
     if (paso === "entidad" || paso === "servicio" || paso === "cliente")
       return avanzar("formEntidad", [yo(texto), bot("Para que un asesor le responda, déjenos sus datos.")])
     avanzar("inicio", [yo(texto), bot("Gracias. Para que la persona indicada le responda, cuéntenos: ¿usted es…?")])
