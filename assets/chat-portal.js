@@ -15,6 +15,10 @@
   var API = "https://app.cobranzaactiva.com/api/publico/portal-chat"
   var SITIO = "https://app.cobranzaactiva.com/api/publico/sitio"
   var deudor = { cedula: "", obligacion: "", nombre: "" }
+  // El portal guarda la cédula del deudor verificado en window._cedula: si ya ingresó, no se le vuelve a pedir
+  var cedulaConocida = function () {
+    return deudor.cedula || String(window._cedula || "").replace(/\D/g, "")
+  }
   var atencion = { horario: "1-5 08:00-17:30" }
 
   var css =
@@ -167,7 +171,7 @@
     var formulario = function () {
       var f = el("form", "cap-f")
       f.noValidate = true
-      var ced = deudor.cedula ? null : campo(f, "cap-ced", "Número de cédula", "text")
+      var ced = cedulaConocida().length >= 5 ? null : campo(f, "cap-ced", "Número de cédula", "text")
       if (ced) ced.setAttribute("inputmode", "numeric")
       var cel = campo(f, "cap-cel", "Celular para responderle (opcional)", "tel")
       var msj = campo(f, "cap-txt", "Su mensaje", "textarea")
@@ -179,7 +183,7 @@
       f.appendChild(b)
       f.addEventListener("submit", function (e) {
         e.preventDefault()
-        var cedula = deudor.cedula || (ced ? ced.value.replace(/\D/g, "") : "")
+        var cedula = ced ? ced.value.replace(/\D/g, "") : cedulaConocida()
         if (ced) ced.setAttribute("aria-invalid", cedula.length < 5 ? "true" : "false")
         msj.setAttribute("aria-invalid", msj.value.trim().length < 3 ? "true" : "false")
         if (cedula.length < 5) return (err.textContent = "Revise el número de cédula.")
