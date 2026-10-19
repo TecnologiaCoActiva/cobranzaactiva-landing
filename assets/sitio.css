@@ -197,6 +197,47 @@ body {
     display: none;
   }
 }
+/* Barra para deudores: portal y chat (no el registro de entidades) */
+.anuncio__corto {
+  display: none;
+}
+.anuncio__chat {
+  font: inherit;
+  font-weight: 700;
+  color: var(--verde-hondo);
+  background: var(--lima);
+  border: 0;
+  border-radius: 999px;
+  padding: 3px 12px;
+  cursor: pointer;
+}
+@media (max-width: 760px) {
+  .anuncio--deudor .anuncio__texto::after {
+    content: none;
+  }
+  .anuncio--deudor .anuncio__texto span.anuncio__largo {
+    display: none;
+  }
+  .anuncio--deudor .anuncio__sello {
+    display: none;
+  }
+  .anuncio--deudor .anuncio__texto span.anuncio__corto {
+    display: inline;
+    width: 100%;
+    text-align: left;
+  }
+  .anuncio--deudor .anuncio__fila {
+    flex-wrap: wrap;
+    gap: 6px 10px;
+  }
+  .anuncio--deudor .anuncio__texto {
+    flex: 1 1 100%;
+    gap: 4px 12px;
+  }
+  .anuncio--deudor .anuncio__publico a {
+    padding: 3px 10px;
+  }
+}
 
 /* ---------- Cabecera ---------- */
 
