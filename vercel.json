@@ -29,6 +29,36 @@
       "source": "/empresas/",
       "destination": "/plataforma/",
       "permanent": true
+    },
+    {
+      "source": "/pago",
+      "destination": "/deudores/",
+      "permanent": false
+    },
+    {
+      "source": "/pago/",
+      "destination": "/deudores/",
+      "permanent": false
+    },
+    {
+      "source": "/pagar",
+      "destination": "/deudores/",
+      "permanent": false
+    },
+    {
+      "source": "/pagar/",
+      "destination": "/deudores/",
+      "permanent": false
+    },
+    {
+      "source": "/deuda",
+      "destination": "/deudores/",
+      "permanent": false
+    },
+    {
+      "source": "/deuda/",
+      "destination": "/deudores/",
+      "permanent": false
     }
   ]
 }
