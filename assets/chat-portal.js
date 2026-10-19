@@ -30,6 +30,7 @@
     ".cap-cab{background:#0F3A14;color:#fff;padding:12px 14px;display:flex;align-items:center;gap:10px}" +
     ".cap-av{width:36px;height:36px;border-radius:50%;background:#8FCF57;color:#0F3A14;display:grid;place-items:center;font-weight:800;font-size:13px;flex:none}" +
     ".cap-cab b{display:block;font-size:14px}.cap-cab small{font-size:11px;opacity:.85}" +
+    ".cap-panel[hidden]{display:none}" + // el panel arranca cerrado: el deudor lo abre con «¿Necesita ayuda?»
     ".cap-x{margin-left:auto;border:0;background:rgba(255,255,255,.14);color:#fff;border-radius:50%;width:30px;height:30px;cursor:pointer;font-size:16px}" +
     ".cap-msj{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:9px;background:#F7F9F6}" +
     ".cap-b{margin:0;max-width:86%;padding:9px 11px;font-size:14px;line-height:1.45;white-space:pre-line}" +
