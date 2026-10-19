@@ -59,6 +59,31 @@
       "source": "/deuda/",
       "destination": "/deudores/",
       "permanent": false
+    },
+    {
+      "source": "/documents/Cobranza_Activa_Informe_BIC.pdf",
+      "destination": "/documents/Cobranza%20Activa_Informe%20BIC%202025.pdf",
+      "permanent": true
+    },
+    {
+      "source": "/documents/Cobranza%20Activa_Informe_BIC_2023.pdf",
+      "destination": "/documents/Cobranza%20Activa_Informe%20BIC%202025.pdf",
+      "permanent": true
+    },
+    {
+      "source": "/documents/Cobranza Activa_Informe_BIC_2023.pdf",
+      "destination": "/documents/Cobranza%20Activa_Informe%20BIC%202025.pdf",
+      "permanent": true
+    },
+    {
+      "source": "/documents/Cobranza Activa_Informe BIC 2025_v1.pdf",
+      "destination": "/documents/Cobranza%20Activa_Informe%20BIC%202025.pdf",
+      "permanent": true
+    },
+    {
+      "source": "/documents/Cobranza%20Activa_Informe%20BIC%202025_v1.pdf",
+      "destination": "/documents/Cobranza%20Activa_Informe%20BIC%202025.pdf",
+      "permanent": true
     }
   ]
 }
