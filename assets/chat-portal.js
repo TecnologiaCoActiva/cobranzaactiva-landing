@@ -200,10 +200,16 @@
           .then(function (r) {
             return r.json().then(function (j) {
               if (!r.ok) throw new Error(j.error || "error")
+              return j
             })
           })
-          .then(function () {
+          .then(function (j) {
             yo(msj.value.trim())
+            // Obligación que ya no está activa: el aviso de la plataforma reemplaza la confirmación
+            if (j && j.aviso) {
+              bot(j.aviso)
+              return pintar("fin")
+            }
             var h = estadoHorario()
             bot(
               h.abierto
